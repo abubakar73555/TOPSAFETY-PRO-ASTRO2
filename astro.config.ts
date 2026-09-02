@@ -25,6 +25,10 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
+  server: {
+    host: '0.0.0.0',
+    port: 3000,
+  },
 
   integrations: [
     sitemap(),

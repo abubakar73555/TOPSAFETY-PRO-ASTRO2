@@ -1,0 +1,6 @@
+{
+  "name": "توب سيفتي برو - TopSafety Pro",
+  "description": "منصة توب سيفتي برو لخدمات السلامة وهندسة الإطفاء والتقارير الفنية",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
