@@ -1,0 +1,170 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+import home from '~/data/home.json';
+
+const metadata = {
+  title: home.seo.title,
+  description: home.seo.description,
+  ignoreTitleTemplate: false,
+};
+
+// الأيقونات ثابتة بالكود (نادراً ما تتغير) — نربطها بالترتيب مع نصوص home.json
+const featuresIcons = [
+  'tabler:building-store',
+  'tabler:shield-check',
+  'tabler:file-invoice',
+  'tabler:certificate',
+  'tabler:list-check',
+  'tabler:bulb',
+];
+
+const stepsIcons = ['tabler:package', 'tabler:list-check', 'tabler:file-check', 'tabler:check'];
+
+const features2Icons = [
+  'flat-color-icons:template',
+  'flat-color-icons:gallery',
+  'flat-color-icons:approval',
+  'flat-color-icons:document',
+  'flat-color-icons:advertising',
+  'flat-color-icons:currency-exchange',
+  'flat-color-icons:voice-presentation',
+  'flat-color-icons:business-contact',
+  'flat-color-icons:database',
+];
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: home.hero.button_text,
+        href: home.hero.button_link,
+        icon: 'tabler:file-text',
+      },
+      { text: 'تعرّف على خدماتنا', href: '#features' },
+    ]}
+    image={{ src: home.hero.image, alt: 'توب سيفتي برو لإصدار الرخص والتقارير' }}
+  >
+    <Fragment slot="title">
+      {home.hero.title_line1} <span class="hidden xl:inline">رخص</span>
+      <span class="text-accent dark:text-white">{home.hero.title_line2}</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline"><span class="font-semibold">توب سيفتي برو</span> {home.hero.subtitle_desktop}</span>
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">{home.hero.subtitle_mobile}</span>
+      {home.hero.subtitle_common}
+    </Fragment>
+  </Hero>
+
+  <Note title={home.note.title} description={home.note.description} />
+
+  <Features
+    id="features"
+    tagline={home.features.tagline}
+    title={home.features.title}
+    subtitle={home.features.subtitle}
+    items={home.features.items.map((item, i) => ({ ...item, icon: featuresIcons[i] }))}
+  />
+
+  <Content
+    isReversed
+    tagline={home.content_block_1.tagline}
+    title={home.content_block_1.title}
+    items={home.content_block_1.items}
+    image={{ src: home.content_block_1.image, alt: home.content_block_1.image_alt }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">{home.content_block_1.content_title}</h3>
+      {home.content_block_1.content_text}
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={home.content_block_2.items}
+    image={{ src: home.content_block_2.image, alt: home.content_block_2.image_alt }}
+  >
+    <Fragment slot="content">{home.content_block_2.content_text}</Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    isAfterContent
+    items={home.content_block_3.items}
+    image={{ src: home.content_block_3.image, alt: home.content_block_3.image_alt }}
+  >
+    <Fragment slot="content">{home.content_block_3.content_text}</Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    title={home.steps.title}
+    items={home.steps.items.map((item, i) => ({ ...item, icon: stepsIcons[i] }))}
+    image={{ src: home.steps.image, alt: 'نجاح إصدار الرخصة والتقرير الفني' }}
+  />
+
+  <Features2
+    title={home.features2.title}
+    subtitle={home.features2.subtitle}
+    tagline={home.features2.tagline}
+    items={home.features2.items.map((item, i) => ({ ...item, icon: features2Icons[i] }))}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <BlogLatestPosts title={home.blog_section.title} information={home.blog_section.information} />
+
+  <FAQs
+    title={home.faqs.title}
+    subtitle={home.faqs.subtitle}
+    tagline={home.faqs.tagline}
+    classes={{ container: 'max-w-6xl' }}
+    items={home.faqs.items}
+  />
+
+  <Stats stats={home.stats} />
+
+  <CallToAction
+    id="contact"
+    actions={[
+      {
+        variant: 'primary',
+        text: home.cta.button_text,
+        href: home.cta.button_link,
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      {home.cta.title_part1}&nbsp;—&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">{home.cta.title_part2}</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      لا تجعل الإجراءات تعيق أعمالك. <br class="hidden md:inline" />{home.cta.subtitle}
+    </Fragment>
+  </CallToAction>
+</Layout>

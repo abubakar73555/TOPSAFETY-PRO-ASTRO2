@@ -1,0 +1,354 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'عقد صيانة سلامة الدفاع المدني - 0572140531',
+  description: 'عقود صيانة سلامة الدفاع المدني المعتمدة، مع الفحص الدوري والصيانة الشاملة لأنظمة الحريق لضمان جاهزية المعدات وتلبية كافة الاشتراطات التنظيمية.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'طلب عقد الصيانة فوراً',
+        href: '#contact',
+        icon: 'tabler:tool',
+      },
+      { text: 'اكتشف خدماتنا', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/hero-image.png', alt: 'توب سيفتي برو لعقد صيانة السلامة المعتمد' }}
+  >
+    <Fragment slot="title">
+      عقد صيانة <span class="hidden xl:inline">سلامة</span>
+      <span class="text-accent dark:text-white">الدفاع المدني</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">منصة توب سيفتي برو</span> تقدم لك عقود صيانة دورية لجميع أنظمة مكافحة الحريق والإنذار
+        معتمدة من الدفاع المدني، مع تقارير فنية رسمية لجميع المنشآت التجارية والصناعية.</span
+      >
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">توب سيفتي برو: عقد صيانة معتمد لسلامة منشأتك.</span>
+      نخدم جميع مدن المملكة: جدة، الرياض، مكة، الدمام، المدينة، الطائف، الخبر، القصيم، تبوك، أبها، حائل، نجران، جازان.
+    </Fragment>
+  </Hero>
+
+  <Note
+    title="فلسفتنا:"
+    description="السرعة الفائقة، الالتزام بمعايير الدفاع المدني، وتسهيل إجراءات إصدار عقود صيانة السلامة لعملائنا في جميع أنحاء المملكة"
+  />
+
+  <Features
+    id="features"
+    tagline="المميزات والخدمات"
+    title="ما نقدمه في عقد صيانة السلامة"
+    subtitle="خدمات متكاملة لعقود الصيانة الدورية لأنظمة مكافحة الحريق والإنذار بامتثال كامل لأنظمة الدفاع المدني."
+    items={[
+      {
+        title: 'خبرة في أنظمة السلامة',
+        description: 'فهم دقيق لاشتراطات الدفاع المدني ومتطلبات عقود الصيانة المعتمدة.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'عقد معتمد رسمياً',
+        description: 'نصدر عقود صيانة معتمدة من الدفاع المدني، مطلوبة لتجديد الرخص التجارية ورخص الدفاع المدني.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'فحص شامل لجميع الأنظمة',
+        description: 'نغطي صيانة مضخات الحريق، أنظمة الإنذار، كواشف الدخان، طفايات الحريق، وأنظمة الرش الآلي.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'تقارير فنية معتمدة',
+        description: 'نوفر تقارير فنية رسمية لتقديمها للجهات المختصة.',
+        icon: 'tabler:file-check',
+      },
+      {
+        title: 'أسعار تنافسية',
+        description: 'نقدم أفضل الأسعار مع الحفاظ على أعلى مستويات الجودة والاحترافية.',
+        icon: 'tabler:arrows-right-left',
+      },
+      {
+        title: 'تغطية جميع مدن المملكة',
+        description: 'نخدم جميع المناطق والمدن السعودية أينما كان نشاطك التجاري.',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    tagline="داخل الخدمة"
+    title="ما هو عقد صيانة السلامة؟"
+    items={[
+      {
+        title: 'تعريف العقد',
+        description:
+          'عقد صيانة السلامة هو اتفاقية رسمية بين صاحب المنشأة وشركة متخصصة، تشمل خدمات دورية لضمان عمل أنظمة الحماية من الحريق بكفاءة.',
+      },
+      {
+        title: 'الخدمات المشمولة',
+        description:
+          'تشمل صيانة مضخات الحريق، صناديق المياه، نظام الرش الآلي، شبكة إنذار الحريق، كواشف الدخان، طفايات الحريق، ومخارج الطوارئ.',
+      },
+      {
+        title: 'الربط برخصة الدفاع المدني',
+        description:
+          'يُعد العقد وثيقة أساسية تطلبها الجهات المختصة لإصدار أو تجديد رخصة الدفاع المدني، مع تقديم تقارير دورية.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/عقد-صيانة-سلامة.png',
+      alt: 'فني صيانة أنظمة سلامة',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">لماذا تختارنا؟</h3>
+      عقود معتمدة، فحص شامل، تقارير رسمية، أسعار تنافسية، تغطية شاملة، دعم على مدار الساعة.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'الحفاظ على الأرواح والممتلكات',
+        description: 'أنظمة السلامة التي تخضع لصيانة دورية تقلل بشكل كبير من مخاطر الحرائق.',
+      },
+      {
+        title: 'الامتثال للقوانين',
+        description: 'عقد الصيانة شرط أساسي للحصول على رخصة الدفاع المدني وتجديدها.',
+      },
+      {
+        title: 'خفض تكاليف التأمين',
+        description: 'بعض شركات التأمين تقدم خصومات للمنشآت التي لديها عقود صيانة سارية.',
+      },
+      {
+        title: 'زيادة كفاءة الأنظمة',
+        description: 'الصيانة الدورية تمنع الأعطال المفاجئة وتطيل عمر الأجهزة.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=2194&q=80',
+      alt: 'أهمية عقود صيانة السلامة',
+    }}
+  >
+    <Fragment slot="content">نضمن لك عقد صيانة شامل يحمي منشأتك ويلبي متطلبات الجهات الرسمية.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'عدد الزيارات الدورية',
+        description: 'يحدد العقد عدد الزيارات الفنية المجدولة (كل 3 أو 6 أشهر) لفحص الأنظمة.',
+      },
+      {
+        title: 'نوع الأنظمة المشمولة',
+        description: 'يشمل العقد تحديداً دقيقاً لجميع الأنظمة المراد صيانتها مثل الإنذار والطفايات.',
+      },
+      {
+        title: 'التزامات الإصلاح والاستبدال',
+        description: 'يوضح العقد مسؤوليات الطرفين تجاه إصلاح الأعطال واستبدال القطع التالفة.',
+      },
+      {
+        title: 'التقارير الفنية الرسمية',
+        description: 'يوفر العقد تقارير دورية معتمدة يمكن تقديمها للجهات الرسمية.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'بنود عقد الصيانة المعتمد',
+    }}
+  >
+    <Fragment slot="content">مصمم خصيصاً ليمنحك الامتثال الكامل وراحة البال.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    title="احصل على عقد صيانة السلامة المعتمد وافتح منشأتك بأمان."
+    items={[
+      {
+        title: 'الخطوة 1: <span class="font-medium">فحص أنظمة السلامة</span>',
+        description: 'نقوم بفحص شامل لجميع أنظمة مكافحة الحريق والإنذار في منشأتك للتأكد من جاهزيتها.',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'الخطوة 2: <span class="font-medium">تجهيز التقارير والعقد</span>',
+        description: 'نقوم بتجهيز التقارير الفنية المعتمدة وإعداد مسودة العقد وفقاً لاشتراطات الدفاع المدني.',
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'الخطوة 3: <span class="font-medium">إصدار العقد</span>',
+        description: 'نقوم بإصدار عقد الصيانة المعتمد من الدفاع المدني وتسليمه لك.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'الخطوة 4: <span class="font-medium">استلام العقد والتقارير</span>',
+        description: 'تستلم العقد والتقارير الفنية لتقديمها للجهات المختصة وتجديد تراخيصك بكل يسر.',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
+      alt: 'إصدار عقد صيانة السلامة بنجاح',
+    }}
+  />
+
+  <Features2
+    title="متطلبات عقد صيانة السلامة"
+    subtitle="نضمن لك استيفاء جميع المتطلبات والشروط اللازمة لإصدار عقد صيانة السلامة بنجاح وبدون أي ملاحظات"
+    tagline="المتطلبات الأساسية"
+    items={[
+      {
+        title: 'التزام بمعايير السلامة',
+        description: 'التأكد من التزام المنشأة بكافة معايير السلامة العامة وأنظمة الحماية من الحريق.',
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'توفر أدوات الوقاية',
+        description:
+          'التأكد من توفر جميع أدوات الوقاية والحماية من الحريق مثل طفايات الحريق، أنظمة الإنذار، ومخارج الطوارئ.',
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'جميع المستندات المطلوبة',
+        description: 'تجهيز كافة المستندات مثل السجل التجاري، رخصة البناء، والعنوان الوطني للمنشأة.',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'دفع الرسوم المقررة',
+        description: 'التأكد من سداد جميع الرسوم المقررة لإصدار العقد.',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'فحص مبدئي للموقع',
+        description: 'الكشف المبدئي على المنشأة لتحديد عدد الأجهزة وأنظمة السلامة المراد صيانتها.',
+        icon: 'flat-color-icons:advertising',
+      },
+      {
+        title: 'تقرير فني معتمد',
+        description: 'توفير تقارير الفحص الفني المعتمدة التي تثبت استيفاء المنشأة لاشتراطات السلامة.',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+      {
+        title: 'عقد الصيانة الموحد',
+        description: 'إصدار العقد بالنموذج المعتمد من الدفاع المدني والموقع من الطرفين.',
+        icon: 'flat-color-icons:voice-presentation',
+      },
+      {
+        title: 'خطط الصيانة الدورية',
+        description: 'تحديد جدول زيارات الصيانة الدورية (كل 3 أو 6 أشهر) حسب العقد.',
+        icon: 'flat-color-icons:business-contact',
+      },
+      {
+        title: 'دعم فني طوال مدة العقد',
+        description: 'نوفر دعماً فنياً على مدار الساعة للإبلاغ عن الأعطال والتعامل معها فوراً.',
+        icon: 'flat-color-icons:database',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <BlogLatestPosts
+    title="تصفح آخر مستجدات أنظمة عقود الصيانة في المدونة"
+    information={`نشاركك دورياً شروحات مفصلة حول عقود صيانة السلامة واشتراطات الدفاع المدني في جميع أنحاء المملكة.
+                  كل مقال جديد نطرحه يمثل خطوة هامة تمكنك من حماية منشأتك وتفادي تأخير التراخيص لتصبح خبيراً في إدارة شؤون السلامة.
+                  الالتزام بالصيانة الدورية هو استثمارك الذكي. شكراً لثقتكم.
+                `}
+  />
+
+  <FAQs
+    title="الأسئلة الشائعة"
+    subtitle="تعمق في الإجابات التالية للحصول على فهم شامل حول عقد صيانة السلامة وكيف يمكن لمنصتنا تسريع أعمالك."
+    tagline="الأسئلة الشائعة"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'هل عقد الصيانة إلزامي؟',
+        description:
+          'نعم، في المملكة العربية السعودية يُعتبر شرطاً أساسياً لاستخراج وتجديد رخصة البلدية والدفاع المدني.',
+      },
+      {
+        title: 'كم مدة عقد صيانة أدوات الحريق؟',
+        description: 'غالباً ما تكون مدته سنة واحدة، مع إمكانية التجديد حسب احتياج المنشأة.',
+      },
+      {
+        title: 'كم مرة يجب صيانة أنظمة السلامة؟',
+        description: 'تختلف حسب نوع الجهاز، لكن بشكل عام يتم إجراء صيانة دورية كل 3 أو 6 أشهر.',
+      },
+      {
+        title: 'ماذا يحدث إذا لم يكن لدي عقد صيانة؟',
+        description:
+          'قد تتعرض المنشأة لغرامات مالية وعدم تجديد رخصة الدفاع المدني، والأهم تعريض الأرواح والممتلكات للخطر.',
+      },
+      {
+        title: 'هل تقدمون الخدمة في جميع مدن المملكة؟',
+        description: 'نعم، نغطي جميع مدن ومناطق المملكة بدون استثناء.',
+      },
+      {
+        title: 'ما هي المستندات المطلوبة لإصدار العقد؟',
+        description: 'عادةً السجل التجاري، رخصة البناء، العنوان الوطني، وتقرير فني مبدئي للموقع.',
+      },
+    ]}
+  />
+
+  <Stats
+    stats={[
+      { title: 'عقد صيانة تم إصداره', amount: '+2.5K' },
+      { title: 'منشأة مخدومة', amount: '+2K' },
+      { title: 'نسبة القبول', amount: '99%' },
+      { title: 'مدينة مخدومة', amount: '25+' },
+    ]}
+  />
+
+  <CallToAction
+    id="contact"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'تواصل معنا عبر الواتساب فوراً',
+        href: 'https://wa.me/966572140531',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title"> احصل على عقد صيانة معتمد الآن </Fragment>
+
+    <Fragment slot="subtitle">
+      لا تدع انتهاء العقد يعطل أعمالك التجارية ويعرضك للغرامات. <br class="hidden md:inline" />تواصل معنا الآن وسنتولى
+      جميع إجراءات إصدار العقد بسرعة واحترافية!
+    </Fragment>
+  </CallToAction>
+</Layout>

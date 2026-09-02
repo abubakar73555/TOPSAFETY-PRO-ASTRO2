@@ -1,0 +1,210 @@
+backend:
+  name: github
+  repo: abubakar73555/TOPSAFETY-PRO-ASTRO
+  branch: main
+  base_url: https://topsafetypro.com
+  auth_endpoint: api/auth
+
+media_folder: "src/assets/images"
+public_folder: "~/assets/images"
+
+publish_mode: simple   # غيّرها لـ editorial_workflow لو تحب مراجعة قبل النشر
+
+collections:
+  - name: "post"
+    label: "مقالات المدونة"
+    folder: "src/data/post"
+    create: true
+    slug: "{{fields.slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "العنوان", name: "title", widget: "string" }
+      - { label: "الرابط (Slug)", name: "slug", widget: "string", hint: "إنجليزي بدون فراغات، مثال: fire-safety-guide" }
+      - { label: "المقتطف / الوصف", name: "excerpt", widget: "text" }
+      - { label: "تاريخ النشر", name: "publishDate", widget: "datetime" }
+      - { label: "الصورة الرئيسية", name: "image", widget: "image", required: false }
+      - { label: "التصنيف", name: "category", widget: "string", required: false }
+      - { label: "الوسوم", name: "tags", widget: "list", required: false }
+      - { label: "مسودة؟", name: "draft", widget: "boolean", default: false, required: false }
+      - { label: "المحتوى", name: "body", widget: "markdown" }
+
+
+  - name: "post_mdx"
+    label: "مقالات المدونة (MDX)"
+    folder: "src/data/post"
+    create: true
+    slug: "{{fields.slug}}"
+    extension: "mdx"
+    format: "frontmatter"
+    fields:
+      - { label: "العنوان", name: "title", widget: "string" }
+      - { label: "الرابط (Slug)", name: "slug", widget: "string", hint: "إنجليزي بدون فراغات، مثال: fire-safety-guide" }
+      - { label: "المقتطف / الوصف", name: "excerpt", widget: "text" }
+      - { label: "تاريخ النشر", name: "publishDate", widget: "datetime" }
+      - { label: "الصورة الرئيسية", name: "image", widget: "image", required: false }
+      - { label: "التصنيف", name: "category", widget: "string", required: false }
+      - { label: "الوسوم", name: "tags", widget: "list", required: false }
+      - { label: "مسودة؟", name: "draft", widget: "boolean", default: false, required: false }
+      - { label: "المحتوى", name: "body", widget: "markdown" }
+      
+# أضف هذا الجزء داخل قسم collections الموجود أصلاً في public/admin/config.yml
+# (تحت مجموعة "post" الموجودة، بنفس المستوى)
+
+  - name: "pages"
+    label: "صفحات الموقع"
+    files:
+      - name: "home"
+        label: "الصفحة الرئيسية"
+        file: "src/data/home.json"
+        fields:
+          - label: "قسم البداية (Hero)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "العنوان - السطر الأول", name: "title_line1", widget: "string" }
+              - { label: "العنوان - السطر الثاني", name: "title_line2", widget: "string" }
+              - { label: "الوصف (شاشات كبيرة)", name: "subtitle_desktop", widget: "text" }
+              - { label: "الوصف (جوال)", name: "subtitle_mobile", widget: "string" }
+              - { label: "الوصف المشترك", name: "subtitle_common", widget: "text" }
+              - { label: "نص الزر", name: "button_text", widget: "string" }
+              - { label: "رابط الزر", name: "button_link", widget: "string" }
+              - { label: "الصورة", name: "image", widget: "image" }
+
+          - label: "الملاحظة (Note)"
+            name: "note"
+            widget: "object"
+            fields:
+              - { label: "العنوان", name: "title", widget: "string" }
+              - { label: "الوصف", name: "description", widget: "string" }
+
+          - label: "المميزات (Features)"
+            name: "features"
+            widget: "object"
+            fields:
+              - { label: "التصنيف", name: "tagline", widget: "string" }
+              - { label: "العنوان", name: "title", widget: "string" }
+              - { label: "الوصف", name: "subtitle", widget: "text" }
+              - label: "العناصر"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "العنوان", name: "title", widget: "string" }
+                  - { label: "الوصف", name: "description", widget: "text" }
+
+          - label: "قسم المحتوى 1"
+            name: "content_block_1"
+            widget: "object"
+            fields:
+              - { label: "التصنيف", name: "tagline", widget: "string" }
+              - { label: "العنوان", name: "title", widget: "string" }
+              - { label: "عنوان المحتوى", name: "content_title", widget: "string" }
+              - { label: "نص المحتوى", name: "content_text", widget: "text" }
+              - { label: "الصورة", name: "image", widget: "image" }
+              - { label: "وصف الصورة", name: "image_alt", widget: "string" }
+              - label: "العناصر"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "العنوان", name: "title", widget: "string" }
+                  - { label: "الوصف", name: "description", widget: "text" }
+
+          - label: "قسم المحتوى 2"
+            name: "content_block_2"
+            widget: "object"
+            fields:
+              - { label: "نص المحتوى", name: "content_text", widget: "text" }
+              - { label: "الصورة", name: "image", widget: "image" }
+              - { label: "وصف الصورة", name: "image_alt", widget: "string" }
+              - label: "العناصر"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "العنوان", name: "title", widget: "string" }
+                  - { label: "الوصف", name: "description", widget: "text" }
+
+          - label: "قسم المحتوى 3"
+            name: "content_block_3"
+            widget: "object"
+            fields:
+              - { label: "نص المحتوى", name: "content_text", widget: "text" }
+              - { label: "الصورة", name: "image", widget: "image" }
+              - { label: "وصف الصورة", name: "image_alt", widget: "string" }
+              - label: "العناصر"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "العنوان", name: "title", widget: "string" }
+                  - { label: "الوصف", name: "description", widget: "text" }
+
+          - label: "خطوات العمل (Steps)"
+            name: "steps"
+            widget: "object"
+            fields:
+              - { label: "العنوان", name: "title", widget: "string" }
+              - { label: "الصورة", name: "image", widget: "string" }
+              - label: "الخطوات"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "العنوان", name: "title", widget: "string" }
+                  - { label: "الوصف", name: "description", widget: "text", required: false }
+
+          - label: "المميزات 2 (Features2)"
+            name: "features2"
+            widget: "object"
+            fields:
+              - { label: "التصنيف", name: "tagline", widget: "string" }
+              - { label: "العنوان", name: "title", widget: "string" }
+              - { label: "الوصف", name: "subtitle", widget: "text" }
+              - label: "العناصر"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "العنوان", name: "title", widget: "string" }
+                  - { label: "الوصف", name: "description", widget: "text" }
+
+          - label: "قسم المدونة"
+            name: "blog_section"
+            widget: "object"
+            fields:
+              - { label: "العنوان", name: "title", widget: "string" }
+              - { label: "الوصف", name: "information", widget: "text" }
+
+          - label: "الأسئلة الشائعة (FAQs)"
+            name: "faqs"
+            widget: "object"
+            fields:
+              - { label: "العنوان", name: "title", widget: "string" }
+              - { label: "الوصف", name: "subtitle", widget: "text" }
+              - { label: "التصنيف", name: "tagline", widget: "string" }
+              - label: "الأسئلة"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "السؤال", name: "title", widget: "string" }
+                  - { label: "الجواب", name: "description", widget: "text" }
+
+          - label: "الإحصائيات (Stats)"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "العنوان", name: "title", widget: "string" }
+              - { label: "الرقم", name: "amount", widget: "string" }
+
+          - label: "دعوة الإجراء (CTA)"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "العنوان - جزء 1", name: "title_part1", widget: "string" }
+              - { label: "العنوان - جزء 2", name: "title_part2", widget: "string" }
+              - { label: "الوصف", name: "subtitle", widget: "text" }
+              - { label: "نص الزر", name: "button_text", widget: "string" }
+              - { label: "رابط الزر", name: "button_link", widget: "string" }
+
+          - label: "إعدادات SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "عنوان الصفحة", name: "title", widget: "string" }
+              - { label: "وصف الصفحة", name: "description", widget: "text" }

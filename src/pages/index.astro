@@ -1,0 +1,367 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'تجديد رخص البلدية والدفاع المدني وإصدار شهادات السلامة',
+  description: 'مكتب معتمد لإصدار وتجديد رخص البلدية والدفاع المدني، وإعداد التقارير الفنية وشهادات السلامة للمنشآت والأنشطة التجارية بسرعة واحترافية عالية.',
+  ignoreTitleTemplate: false,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'اطلب خدمتك الآن',
+        href: 'https://wa.me/966572140531',
+        icon: 'tabler:file-text',
+      },
+      { text: 'تعرّف على خدماتنا', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/hero-image.png', alt: 'توب سيفتي برو لإصدار الرخص والتقارير' }}
+  >
+    <Fragment slot="title">
+      إصدار وتجديد <span class="hidden xl:inline">رخص</span>
+      <span class="text-accent dark:text-white">البلدية والدفاع المدني</span> والتقارير الفنية
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">توب سيفتي برو</span> شريكك المعتمد لإنجاز رخصة بلدي، رخصة الدفاع المدني (سلامة)، 
+        والتقارير الفنية وشهادات السلامة بسرعة ودقة تضمن قبولها من المرة الأولى.</span>
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">توب سيفتي برو: رخصتك جاهزة بأسرع وقت.</span>
+      نخدم المحلات، المستودعات، والمصانع، ونوفر كافة المتطلبات الهندسية اللازمة لإصدار وتجديد التراخيص في مختلف مناطق المملكة.
+    </Fragment>
+  </Hero>
+
+  <Note title="فلسفتنا:" description="السرعة في الإنجاز، الدقة في التقارير، والاحترافية في التعامل مع منصات بلدي وسلامة" />
+
+  <Features
+    id="features"
+    tagline="المميزات والخدمات"
+    title="لماذا يختار العملاء توب سيفتي برو"
+    subtitle="فريق هندسي متخصص في إنهاء إجراءات التراخيص وشهادات السلامة بما يتوافق مع كود البناء السعودي ومتطلبات الجهات المعنية."
+    items={[
+      {
+        title: 'إصدار وتجديد رخصة بلدية',
+        description:
+          'ننهي لك إجراءات رخصة بلدي (المهنية والتجارية) من خلال التأكد من مطابقة الموقع لكافة الاشتراطات البلدية.',
+        icon: 'tabler:building-store',
+      },
+      {
+        title: 'رخصة الدفاع المدني (سلامة)',
+        description:
+          'إصدار وتجديد تراخيص الدفاع المدني عبر بوابة سلامة، وتوفير كافة متطلبات الوقاية والحماية من الحريق.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'إصدار التقارير الفنية',
+        description:
+          'إعداد التقارير الفنية الهندسية المعتمدة والمطلوبة لإتمام معاملاتك في منصة بلدي أو الدفاع المدني.',
+        icon: 'tabler:file-invoice',
+      },
+      {
+        title: 'إصدار شهادات السلامة',
+        description:
+          'توفير شهادات تركيب أدوات السلامة وشهادات الإنجاز الفنية المعتمدة لضمان نظامية منشأتك وتجنب المخالفات.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'معاينة وفحص ميداني',
+        description:
+          'مراجعة فعلية لوسائل السلامة والكهرباء في موقعك قبل رفع التقرير لضمان المطابقة الفورية للواقع.',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'استشارات كود البناء',
+        description:
+          'نقدم لك بدائل هندسية ذكية ومعقولة التكلفة لاستكمال متطلبات السلامة بما يتوافق مع كود البناء السعودي.',
+        icon: 'tabler:bulb',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    tagline="جودة الخدمة"
+    title="كيف نضمن جودة الرخص والتقارير"
+    items={[
+      {
+        title: 'اعتماد رسمي لدى كافة الجهات',
+        description:
+          'تقاريرنا وشهاداتنا مقبولة ومعتمدة لدى منصة بلدي وبوابة سلامة، مما يقلل احتمالية الرفض أو التأخير.',
+      },
+      {
+        title: 'خبرة في الإجراءات الرقمية',
+        description:
+          'نمتلك دراية واسعة بتحديثات منصات التراخيص الحكومية لضمان سير معاملتك دون عوائق تقنية.',
+      },
+      {
+        title: 'دقة هندسية متناهية',
+        description:
+          'كل شهادة أو تقرير يمر بمراجعة هندسية دقيقة تضمن سلامة المنشأة وتوافقها مع اللوائح الوطنية.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/رخصه-البلدية.webp',
+      alt: 'رخصة البلدية',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">احترافية تتجاوز مجرد الأوراق</h3>
+      نحرص على تأمين منشأتك نظامياً وهندسياً لتتمكن من التركيز على نمو تجارتك.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'تقرير فني مخصص لنشاطك',
+        description: `نصيغ التقرير الفني بما يتناسب مع نوع النشاط التجاري الفعلي لضمان قبول ملفك في منصة بلدي.`,
+      },
+      {
+        title: 'شهادة سلامة معتمدة',
+        description:
+          'نوثق تركيب أنظمة السلامة بشهادات رسمية معتمدة تعكس كفاءة وسائل الوقاية في موقعك.',
+      },
+      {
+        title: 'متابعة حية للرخصة',
+        description: 'يمكنك التواصل معنا لمتابعة حالة طلبك في أي وقت حتى صدور الرخصة النهائية.',
+      },
+      {
+        title: 'أرشفة إلكترونية للمستندات',
+        description:
+          'نحتفظ بكافة الصور والشهادات والفواتير بشكل مرتب يسهل الرجوع إليه عند طلب البلدية أو الدفاع المدني.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/شهاده-تركيب-ادوات-السلامه.webp',
+      alt: 'إصدار رخص وشهادات سلامة',
+    }}
+  >
+    <Fragment slot="content">نهتم بأن يعكس التقرير والشهادة الوضع الحقيقي والنظامي لمنشأتك.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'تغطية واسعة لمختلف الأنشطة',
+        description:
+          'سواء كنت تدير محلاً صغيراً أو مجمعاً تجارياً، لدينا الحلول الهندسية المناسبة لترخيصك.',
+      },
+      {
+        title: 'توفير الوقت والجهد',
+        description:
+          'بدلاً من الدخول في دوامة الإجراءات المرفوضة، اطلب خدمتك من توب سيفتي برو لضمان الإنجاز من المرة الأولى.',
+      },
+      {
+        title: 'التزام بتحديثات اللوائح',
+        description:
+          'نتابع التعديلات الدورية في اشتراطات الدفاع المدني والبلدية لنقدم لك استشارة مبنية على آخر المعلومات.',
+      },
+      {
+        title: 'دعم فني هندسي',
+        description: `فريقنا متاح للإجابة على استفساراتك الفنية المتعلقة بسلامة الموقع ومتطلبات التراخيص.`,
+      },
+    ]}
+    image={{
+      src: '~/assets/images/رخصه-الدفاع-المدني.webp',
+      alt: 'رخصة الدفاع المدني',
+    }}
+  >
+    <Fragment slot="content">شريكك الموثوق في رحلة إصدار وتجديد التراخيص.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    title="خطوات إصدار رخصتك وتقريرك"
+    items={[
+      {
+        title: 'الخطوة 1: <span class="font-medium">إرسال البيانات</span>',
+        description:
+          'زودنا بنوع النشاط وصور الموقع ووسائل السلامة عبر الواتساب للبدء الفوري.',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'الخطوة 2: <span class="font-medium">المراجعة والتدقيق</span>',
+        description:
+          'يراجع فريقنا البيانات ويجهز التقرير الفني أو شهادة السلامة المطلوبة وفق المعايير.',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'الخطوة 3: <span class="font-medium">الرفع والإصدار</span>',
+        description:
+          'يتم رفع التقرير والشهادة على المنصة المخصصة (بلدي/سلامة) لصدور الرخصة النهائية.',
+        icon: 'tabler:file-check',
+      },
+      {
+        title: 'رخصتك جاهزة',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
+      alt: 'نجاح إصدار الرخصة والتقرير الفني',
+    }}
+  />
+
+  <Features2
+    title="نطاق خدماتنا المعتمدة"
+    subtitle="نغطي كافة عناصر السلامة والتراخيص المطلوبة لتأمين المنشآت وفق كود البناء السعودي"
+    tagline="مجالات التخصص"
+    items={[
+      {
+        title: 'رخص المحلات والورش',
+        description: 'إصدار وتجديد رخصة بلدية فورية مع توفير كافة التقارير الفنية.',
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'رخص الدفاع المدني',
+        description: 'تجديد تراخيص بوابة سلامة وتوفير شهادات تركيب أنظمة الحريق.',
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'التقارير الفنية الهندسية',
+        description: 'إعداد تقارير فنية معتمدة لمطابقة المنشآت للأنشطة التجارية.',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'شهادات السلامة والإنجاز',
+        description: 'إصدار شهادات السلامة الفنية المطلوبة لإتمام التراخيص الرسمية.',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'أنظمة الإنذار والرش',
+        description: 'فحص وتوثيق كفاءة أنظمة الإنذار والرش الآلي في التقارير الفنية.',
+        icon: 'flat-color-icons:advertising',
+      },
+      {
+        title: 'مخططات السلامة',
+        description: 'إعداد وتدقيق المخططات الهندسية الشاملة لاعتمادات الدفاع المدني.',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+      {
+        title: 'سلامة التمديدات',
+        description: 'التحقق من جودة العزل والتمديدات الكهربائية في شهادة السلامة.',
+        icon: 'flat-color-icons:voice-presentation',
+      },
+      {
+        title: 'إشراف فني ختامي',
+        description: 'تقديم تقرير الإشراف الهندسي اللازم لفتح المنشأة تجارياً.',
+        icon: 'flat-color-icons:business-contact',
+      },
+      {
+        title: 'تراخيص المستودعات',
+        description: 'حلول متكاملة لرخص الدفاع المدني وشهادات السلامة للمستودعات.',
+        icon: 'flat-color-icons:database',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <BlogLatestPosts
+    title="آخر مستجدات رخص البلدية والدفاع المدني"
+    information={`نطلعك بشكل مستمر على تحديثات منصة بلدي، بوابة سلامة، واشتراطات التقارير الفنية
+                  لتضمن بقاء منشأتك في المنطقة الآمنة قانونياً وهندسياً.
+                `}
+  />
+
+  <FAQs
+    title="الأسئلة الشائعة"
+    subtitle="إليك كل ما تود معرفته عن رخصة بلدي، الدفاع المدني، والتقارير الفنية."
+    tagline="الأسئلة الشائعة"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'ما هي متطلبات إصدار رخصة بلدية؟',
+        description:
+          'تحتاج إلى سجل تجاري ساري، عنوان وطني، وتقرير فني هندسي معتمد يؤكد مطابقة الموقع لنشاطك، ونحن نتولى إصدار هذا التقرير لك.',
+      },
+      {
+        title: 'لماذا أحتاج شهادة سلامة؟',
+        description:
+          'شهادة السلامة هي وثيقة تثبت أن أنظمة الحريق والوقاية تم تركيبها وتعمل بكفاءة، وهي شرط أساسي لإصدار أو تجديد رخصة الدفاع المدني (سلامة).',
+      },
+      {
+        title: 'هل تقاريركم مقبولة في منصة بلدي؟',
+        description:
+          'نعم، جميع تقاريرنا الفنية تصدر بصيغ معتمدة رسمياً ومقبولة لدى منصة بلدي في جميع أنحاء المملكة.',
+      },
+      {
+        title: 'كم يستغرق تجديد رخصة الدفاع المدني؟',
+        description:
+          'يعتمد ذلك على توفر وسائل السلامة، ولكن فريقنا يسعى لإصدار شهادة السلامة والتقرير الفني في أسرع وقت ممكن لإتمام التجديد.',
+      },
+      {
+        title: 'ما هو التقرير الفني الفوري؟',
+        description:
+          'هو خدمة نقدمها لإصدار التقارير الهندسية العاجلة الموجهة مباشرة للمنصات الحكومية لتمكينك من فتح محلك دون تأخير.',
+      },
+      {
+        title: 'كيف أطلب الخدمة؟',
+        description:
+          'ببساطة تواصل معنا عبر الواتساب أسفل الصفحة، وسيبدأ مهندسنا في توجيهك وتجهيز ملفك فوراً.',
+      },
+    ]}
+  />
+
+  <Stats
+    stats={[
+      { title: 'رخصة بلدي صادرة', amount: '+4.5K' },
+      { title: 'رخصة سلامة منجزة', amount: '+3.8K' },
+      { title: 'تقرير فني معتمد', amount: '+5K' },
+      { title: 'شهادة سلامة', amount: '+6.2K' },
+    ]}
+  />
+
+  <CallToAction
+    id="contact"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'اطلب رخصتك عبر الواتساب',
+        href: 'https://wa.me/966572140531',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      توب سيفتي برو&nbsp;—&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">رخصتك وتقاريرك بأمان وسرعة</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      لا تجعل الإجراءات تعيق أعمالك. <br class="hidden md:inline" />تواصل معنا الآن، وسيقوم فريقنا الهندسي
+      بإصدار تقريرك الفني وشهادة السلامة لضمان صدور رخصتك في أسرع وقت.
+    </Fragment>
+  </CallToAction>
+</Layout>

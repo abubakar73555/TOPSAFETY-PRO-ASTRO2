@@ -1,0 +1,144 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+
+const metadata = {
+  title: 'جميع خدمات السلامة والتراخيص في جميع المدن | توب سيفتي برو',
+  ignoreTitleTemplate: true,
+};
+
+// ============================================================
+// 1) اكتشاف كل صفحات .astro الموجودة فعليًا داخل مجلد src/pages
+//    (مباشرة، بدون المجلدات الفرعية زي blog / homes / inquiries / landing)
+// ============================================================
+// ملاحظة: هذا الملف نفسه موجود داخل src/pages، فالمسار النسبي './*.astro'
+// يعني: كل ملفات .astro الموجودة في نفس المجلد.
+const pageFiles = import.meta.glob('./*.astro', { eager: false });
+
+// أسماء الملفات المستثناة (صفحات نظامية مش خدمات، عدّل القائمة حسب احتياجك)
+const excludedSlugs = ['404', 'جميع-الخدمات'];
+
+const allSlugs = Object.keys(pageFiles)
+  .map((path) => path.replace('./', '').replace('.astro', ''))
+  .filter((slug) => slug && !excludedSlugs.includes(slug))
+  .sort();
+
+// ============================================================
+// 2) تجميع الروابط حسب اسم الخدمة (بعد فصل اسم المدينة من آخر السلج)
+// ============================================================
+const cities = [
+  'نجران',
+  'مكة',
+  'حائل',
+  'جدة',
+  'جازان',
+  'تبوك',
+  'المدينة',
+  'القصيم',
+  'الطائف',
+  'الرياض',
+  'الدمام',
+  'الخبر',
+  'أبها',
+];
+
+const groups: Record<string, string[]> = {};
+
+allSlugs.forEach((slug) => {
+  let service = slug;
+  for (const city of cities) {
+    if (slug.endsWith(`-${city}`)) {
+      service = slug.slice(0, slug.lastIndexOf(`-${city}`));
+      break;
+    }
+  }
+  // توحيد المسميات المتشابهة
+  if (service === 'شهاده-سلامه') service = 'شهادة-سلامة';
+
+  if (!groups[service]) groups[service] = [];
+  groups[service].push(slug);
+});
+
+// ============================================================
+// 3) ترتيب عرض الخدمات — الترتيب المفضّل أولاً
+//    وأي خدمة جديدة مش موجودة هنا تُضاف تلقائيًا في الآخر
+//    (بدل ما تختفي بصمت زي ما حصل قبل كده)
+// ============================================================
+const preferredOrder = [
+  'كاميرات-المراقبة',
+  'عقد-صيانة-سلامة',
+  'شهادة-سلامة',
+  'شهاده-استيفاء-كاميرات',
+  'رخصة-الدفاع-المدني',
+  'رخصة-البلدية',
+  'تقرير-فني-فوري',
+  'تقرير-فني-غير-فوري',
+  'تقرير-فني-سلامة',
+  'تقرير-فني-سلامة-شامل',
+  'تقرير-فني-بلدي',
+  'تقرير-ملائمة',
+  'تقرير-سلامة-الدفاع-المدني',
+  'تجديد-رخصة-البلدية',
+  'تجديد-ترخيص-الدفاع-المدني',
+];
+
+const allServiceKeys = Object.keys(groups);
+const remainingKeys = allServiceKeys.filter((key) => !preferredOrder.includes(key)).sort();
+const serviceOrder = [...preferredOrder, ...remainingKeys];
+
+// تحويل slug إلى نص مقروء
+function humanize(slug: string) {
+  return slug.replace(/-/g, ' ');
+}
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero رئيسي للصفحة -->
+  <Hero
+    tagline="خريطة الموقع"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'تواصل معنا',
+        href: 'https://wa.me/966572140531',
+        icon: 'tabler:phone',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      جميع خدمات <span class="text-accent dark:text-white">السلامة والتراخيص</span> في جميع المدن
+    </Fragment>
+    <Fragment slot="subtitle">
+      صفحة تجميعية لجميع خدماتنا في كل مدن المملكة. اختر الخدمة والمدينة للوصول المباشر.
+    </Fragment>
+  </Hero>
+
+  <!-- عرض الخدمات مجمعة -->
+  <div class="max-w-6xl mx-auto px-4 py-12 rtl text-right">
+    <div class="space-y-10">
+      {
+        serviceOrder.map((service) => {
+          const links = groups[service];
+          if (!links) return null;
+          return (
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+              <h2 class="text-2xl font-semibold text-primary-600 dark:text-primary-400 mb-4 border-b pb-2">
+                {humanize(service)}
+              </h2>
+              <div class="flex flex-wrap gap-3">
+                {links.map((slug) => (
+                  <a
+                    href={`/${slug}`}
+                    class="inline-block bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full px-5 py-2 text-sm hover:bg-primary-500 hover:text-white transition-colors"
+                  >
+                    {humanize(slug)}
+                  </a>
+                ))}
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</Layout>

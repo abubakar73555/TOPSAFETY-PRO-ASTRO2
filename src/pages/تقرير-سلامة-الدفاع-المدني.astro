@@ -1,0 +1,360 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'تقرير فني بلدي سلامة لتجديد واصدار الرخص التجارية 0572140531',
+  description:
+    'تقرير فني شامل للكشف الهندسي على المنشآت، يتيح إصدار وتجديد الرخص التجارية من بلدي وترخيص الدفاع المدني.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'احصل على التقرير الآن',
+        href: '#contact',
+        icon: 'tabler:file-text',
+      },
+      { text: 'إكتشف خدماتنا', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/hero-image.png', alt: 'توب سيفتي برو لإعداد تقرير سلامة الدفاع المدني' }}
+  >
+    <Fragment slot="title">
+      تقرير سلامة <span class="hidden xl:inline">الدفاع المدني</span>
+      <span class="text-accent dark:text-white">من جهة معتمدة</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">منصة توب سيفتي برو</span> تقدم لك إعداد تقرير سلامة الدفاع المدني من مكتب هندسي معتمد
+        مع تقييم شامل لأنظمة الوقاية والحماية من الحريق.</span
+      >
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">توب سيفتي برو: اعتماد فوري.</span>
+      نقدم خدماتنا في جميع مدن المملكة: جدة، الرياض، مكة، الدمام، المدينة المنورة، الطائف، الخبر، القصيم.
+    </Fragment>
+  </Hero>
+
+  <Note title="فلسفتنا:" description="السرعة الفائقة، الالتزام بالمعايير، وتقييم دقيق لأنظمة السلامة لعملائنا" />
+
+  <Features
+    id="features"
+    tagline="المميزات والخدمات"
+    title="ما ستحصل عليه مع توب سيفتي برو"
+    subtitle="واحدة من أفضل الخدمات الهندسية المتكاملة في السوق السعودي لإعداد تقارير سلامة الدفاع المدني بامتثال كامل لكود البناء."
+    items={[
+      {
+        title: 'مكتب هندسي معتمد',
+        description:
+          'نعمل كمكتب هندسي معتمد من الدفاع المدني لضمان إصدار تقارير فنية معتمدة ومقبولة رسمياً لدى جميع الجهات.',
+        icon: 'tabler:brand-tailwind',
+      },
+      {
+        title: 'تقييم شامل لأنظمة السلامة',
+        description:
+          'نقوم بتقييم جميع أجهزة وأنظمة الوقاية من الحريق المتوفرة في منشأتك بدقة متناهية لضمان سلامتها التامة.',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'فحص ميداني احترافي',
+        description:
+          'فريقنا الهندسي يقوم بفحص ميداني شامل للمنشأة للتأكد من جاهزية جميع أنظمة السلامة قبل إصدار التقرير.',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'سرعة في الإنجاز',
+        description: 'نضمن لك إصدار التقرير في أسرع وقت ممكن دون التأثير على جودة التقييم ودقة الفحص الميداني.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'أسعار تنافسية',
+        description: 'نقدم أفضل الأسعار في السوق مع الحفاظ على أعلى مستويات الجودة والاحترافية في إعداد التقارير.',
+        icon: 'tabler:arrows-right-left',
+      },
+      {
+        title: 'تغطية جميع المدن',
+        description: 'نقدم خدماتنا في جميع مدن المملكة العربية السعودية لضمان وصول الخدمة لأكبر عدد من المنشآت.',
+        icon: 'tabler:bulb',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    tagline="داخل الخدمة"
+    title="مخطط توب سيفتي برو: دقة التقييم تلتقي مع معايير السلامة!"
+    items={[
+      {
+        title: 'الاعتماد على كود البناء السعودي',
+        description:
+          'نصيغ تقاريرنا استناداً إلى أحدث الأنظمة واللوائح المعتمدة بالمملكة لضمان جودة هندسية لا غبار عليها.',
+      },
+      {
+        title: 'تنسيق متوافق مع كود Tailwind CSS v4',
+        description:
+          'تم بناء المنصة بأحدث التقنيات البرمجية لضمان تصفح سريع جداً وخفيف لعملائنا من الجوال أو الكمبيوتر.',
+      },
+      {
+        title: 'توافق شامل ومتكامل',
+        description:
+          'نضمن أن تقاريرنا ومخططاتنا تكون متوافقة ومفهومة لدى كافة الجهات الميدانية والإلكترونية المعنية بالترخيص.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'فريق هندسي يفحص أنظمة السلامة',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">التأسيس على قواعد هندسية حديثة</h3>
+      احصل على الأفضلية النظامية من خلال تطبيق أفضل ممارسات الوقاية والحماية المعتمدة.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'تقييم دقيق وشامل',
+        description: `نقوم بتقييم جميع أنظمة السلامة في منشأتك بدقة متناهية لضمان استيفاء جميع المتطلبات والاشتراطات.`,
+      },
+      {
+        title: 'تحديد نقاط الضعف',
+        description: 'نحدد أي نقاط ضعف في أنظمة السلامة ونقدم توصيات فورية لمعالجتها قبل إصدار التقرير النهائي.',
+      },
+      {
+        title: 'توصيات فورية',
+        description: 'نقدم لك توصيات عملية وفورية لتحسين أنظمة السلامة في منشأتك وضمان الامتثال الكامل للاشتراطات.',
+      },
+      {
+        title: 'اعتماد من الجهات المختصة',
+        description: 'نضمن اعتماد التقرير من الجهات المختصة ليصبح وثيقة رسمية معتمدة ومقبولة لدى جميع الجهات.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=2194&q=80',
+      alt: 'تقييم أنظمة السلامة',
+    }}
+  >
+    <Fragment slot="content">نضمن أن تقييمنا يمثلك ويمثل أمان منشأتك بشكل حقيقي.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'تفاعل وتجاوب سريع',
+        description: 'نواكب كافة التحديثات في أنظمة السلامة لنقدم لك تقارير محدثة ومتوافقة مع أحدث الاشتراطات.',
+      },
+      {
+        title: 'تطوير وتحديث مستمر',
+        description:
+          'نتابع التعديلات الدورية في اشتراطات المديرية العامة للدفاع المدني لنقدم لك استشارات محدثة دائمًا.',
+      },
+      {
+        title: 'كفاءة عالية في الوقت والموارد',
+        description: 'وفر على نفسك عناء البدء من الصفر؛ اطلب التقرير من توب سيفتي برو واحصل عليه في أسرع وقت.',
+      },
+      {
+        title: 'دعم هندسي متكامل للعملاء',
+        description: `انضم إلى مئات المنشآت التي وثقت بـ توب سيفتي برو، واستفد من الدعم الفني المتواصل طوال رحلة إعداد التقرير.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'مهندسو سلامة يتابعون المشاريع',
+    }}
+  >
+    <Fragment slot="content">مصمم خصيصاً لدعم نمو واستقرار أعمالك التجارية.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    title="احصل على تقرير سلامة الدفاع المدني المعتمد في أسرع وقت."
+    items={[
+      {
+        title: 'الخطوة 1: <span class="font-medium">التواصل معنا</span>',
+        description: 'ابدأ بالتواصل معنا عبر الواتساب أو الهاتف لتقديم طلبك وتزويدنا ببيانات المنشأة الأساسية.',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'الخطوة 2: <span class="font-medium">الفحص الميداني</span>',
+        description:
+          'يقوم فريقنا الهندسي بزيارة المنشأة وإجراء فحص ميداني شامل لجميع أنظمة السلامة والوقاية من الحريق.',
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'الخطوة 3: <span class="font-medium">إعداد التقرير</span>',
+        description: 'يتم إعداد التقرير الفني الشامل بناءً على نتائج الفحص الميداني مع تحديد أي نواقص أو توصيات.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'الخطوة 4: <span class="font-medium">اعتماد التقرير</span>',
+        description: 'يتم اعتماد التقرير من المكتب الهندسي المعتمد وتسليمه لك بشكل رسمي معتمد ومختوم.',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
+      alt: 'إعداد تقرير سلامة الدفاع المدني',
+    }}
+  />
+
+  <Features2
+    title="ما يشمله تقرير سلامة الدفاع المدني"
+    subtitle="نقدم تقييماً شاملاً لجميع أنظمة ومعدات السلامة في منشأتك لضمان جاهزيتها التامة واستيفاء متطلبات الدفاع المدني"
+    tagline="نطاق التقييم"
+    items={[
+      {
+        title: 'تقييم أجهزة الوقاية من الحريق',
+        description: 'تقييم شامل لجميع أجهزة وأنظمة الوقاية من الحريق المتوفرة في المنشأة للتأكد من كفاءتها.',
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'فحص طفايات الحريق',
+        description: 'فحص صلاحية وتوزيع طفايات الحريق بأنواعها المختلفة حسب طبيعة النشاط والمخاطر المحتملة.',
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'أنظمة الإنذار المبكر',
+        description: 'التحقق من كفاءة لوحات الإنذار الرئيسية وكواشف الدخان والحرارة لضمان الاستجابة السريعة.',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'مراجعة أنظمة الرشاشات',
+        description: 'تقييم كفاءة أنظمة الرش الآلي (Sprinklers) وتغطيتها الشاملة لجميع مناطق المنشأة.',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'مراجعة مخارج الطوارئ',
+        description: 'مراجعة الممرات والأبواب المقاومة للحريق واللوحات الإرشادية المضيئة لضمان خروج آمن.',
+        icon: 'flat-color-icons:advertising',
+      },
+      {
+        title: 'تحديد نقاط الضعف',
+        description: 'تحديد أي نقاط ضعف في أنظمة السلامة وتقديم توصيات فورية لمعالجتها.',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+      {
+        title: 'تقديم التوصيات',
+        description: 'تقديم توصيات عملية وفورية لتحسين أنظمة السلامة وضمان الامتثال الكامل للاشتراطات.',
+        icon: 'flat-color-icons:voice-presentation',
+      },
+      {
+        title: 'اعتماد التقرير',
+        description: 'اعتماد التقرير من المكتب الهندسي المعتمد ليصبح وثيقة رسمية معتمدة ومقبولة لدى جميع الجهات.',
+        icon: 'flat-color-icons:business-contact',
+      },
+      {
+        title: 'التقرير النهائي',
+        description: 'تسليم التقرير النهائي بشكل رسمي معتمد ومختوم مع جميع المرفقات والمستندات اللازمة.',
+        icon: 'flat-color-icons:database',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <BlogLatestPosts
+    title="تصفح آخر مستجدات اشتراطات السلامة بالمدونة"
+    information={`نشاركك دورياً شروحات مفصلة حول كود البناء السعودي واشتراطات منصة بلدي والدفاع المدني.
+                  كل مقال جديد نطرحه يمثل خطوة هامة تمكنك من حماية منشأتك وتفادي تأخير التراخيص لتصبح خبيراً في إدارة شؤون منشأتك.
+                  الوقاية هي استثمارك الذكي. شكراً لثقتكم.
+                `}
+  />
+
+  <FAQs
+    title="الأسئلة الشائعة"
+    subtitle="تعمق في الإجابات التالية للحصول على فهم شامل حول تقرير سلامة الدفاع المدني وكيف يمكن لمنصتنا مساعدتك."
+    tagline="الأسئلة الشائعة"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'من يصدر تقرير سلامة الدفاع المدني؟',
+        description:
+          'يصدره مكتب هندسي معتمد من الدفاع المدني بعد إجراء فحص ميداني شامل للمنشأة. نحن في توب سيفتي برو نعمل كمكتب هندسي معتمد ونصدر تقارير معتمدة رسمياً.',
+      },
+      {
+        title: 'كم مرة يجب إعداد تقرير السلامة؟',
+        description:
+          'يُنصح بإعداده بشكل دوري سنوياً أو عند تجديد التراخيص لضمان الامتثال المستمر. كما يجب إعداده عند إجراء أي تعديلات على المنشأة أو أنظمة السلامة.',
+      },
+      {
+        title: 'ما هي مدة صلاحية التقرير؟',
+        description:
+          'عادة تكون صلاحية تقرير سلامة الدفاع المدني سنة واحدة، ويجب تجديده سنوياً لضمان استمرارية الامتثال لاشتراطات السلامة.',
+      },
+      {
+        title: 'ماذا لو كانت المنشأة لا تستوفي بعض الاشتراطات؟',
+        description:
+          'فريقنا الهندسي يقدم لك استشارات فورية لحل أي نواقص في أنظمة السلامة وتجهيزها بالكامل قبل إصدار التقرير النهائي، بأقل تكلفة وأعلى جودة.',
+      },
+      {
+        title: 'هل التقرير مقبول لدى جميع الجهات؟',
+        description:
+          'نعم، جميع تقاريرنا الصادرة من مكتب هندسي معتمد ومختومة رسمياً ومقبولة بشكل مباشر في نظام بلدي والدفاع المدني بكافة مناطق المملكة العربية السعودية.',
+      },
+      {
+        title: 'كم يستغرق إعداد التقرير؟',
+        description:
+          'يتم إعداد التقرير في أسرع وقت ممكن بعد الفحص الميداني، عادة خلال أيام قليلة حسب حجم المنشأة وتعقيد أنظمة السلامة.',
+      },
+    ]}
+  />
+
+  <Stats
+    stats={[
+      { title: 'تقرير سلامة صادر', amount: '+2.5K' },
+      { title: 'منشأة تم تقييمها', amount: '+2K' },
+      { title: 'نسبة القبول', amount: '100%' },
+      { title: 'مدن المملكة', amount: '13+' },
+    ]}
+  />
+
+  <CallToAction
+    id="contact"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'تواصل معنا عبر الواتساب فوراً',
+        href: 'https://wa.me/966572140531',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title"> احصل على تقرير سلامة الدفاع المدني الآن </Fragment>
+
+    <Fragment slot="subtitle">
+      لا تؤجل الحصول على تقرير السلامة المعتمد. <br class="hidden md:inline" />تواصل معنا الآن وسنقدم لك الخدمة بسرعة
+      واحترافية في جميع مدن المملكة!
+    </Fragment>
+  </CallToAction>
+</Layout>

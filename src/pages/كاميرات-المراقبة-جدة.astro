@@ -1,0 +1,350 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'شهادة استيفاء كاميرات المراقبة في جدة - 0572140531',
+  description: 'إصدار شهادة استيفاء كاميرات المراقبة الأمنية في جدة بمعايير معتمدة، مع الفحص والتركيب المتوافق مع اللوائح والاشتراطات الرسمية بكل دقة.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'طلب شهادة الكاميرات في جدة فوراً',
+        href: '#contact',
+        icon: 'tabler:camera',
+      },
+      { text: 'اكتشف خدماتنا', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/hero-image.png', alt: 'توب سيفتي برو لشهادة استيفاء كاميرات المراقبة في جدة' }}
+  >
+    <Fragment slot="title">
+      شهادة استيفاء <span class="hidden xl:inline">كاميرات المراقبة</span>
+      <span class="text-accent dark:text-white">في جدة</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">منصة توب سيفتي برو</span> تقدم لك خدمة إصدار شهادة استيفاء تركيب كاميرات المراقبة في جدة
+        (المنطقة الغربية) لجميع المنشآت التجارية، معتمدة من الشرطة السعودية.</span
+      >
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">توب سيفتي برو: شهادة كاميرات معتمدة في جدة.</span>
+      نخدم جميع أحياء جدة: حي البغدادية، حي الروضة، حي الشاطئ، حي السلامة، وجميع أحياء محافظة جدة.
+    </Fragment>
+  </Hero>
+
+  <Note
+    title="فلسفتنا:"
+    description="السرعة الفائقة، الالتزام بالمعايير الأمنية، وتسهيل إجراءات إصدار شهادة استيفاء كاميرات المراقبة لعملائنا في جدة"
+  />
+
+  <Features
+    id="features"
+    tagline="المميزات والخدمات في جدة"
+    title="ما نقدمه في شهادة كاميرات المراقبة بجدة"
+    subtitle="خدمات متكاملة لتسهيل حصولك على شهادة استيفاء كاميرات المراقبة المعتمدة من الشرطة السعودية في جدة."
+    items={[
+      {
+        title: 'خبرة في اشتراطات جدة',
+        description: 'فهم دقيق لمتطلبات الشرطة السعودية وأمانة محافظة جدة لأنظمة المراقبة والأمن.',
+        icon: 'tabler:camera',
+      },
+      {
+        title: 'شهادة معتمدة رسمياً',
+        description: 'نصدر شهادة استيفاء تركيب الكاميرات المعتمدة والمطلوبة للرخص البلدية والتجارية في جدة.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'فحص أنظمة المراقبة',
+        description: 'نتأكد من توافق كاميراتك مع الاشتراطات الأمنية من حيث العدد والزوايا ومدة التسجيل في جدة.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'سرعة في الإنجاز',
+        description: 'نضمن إصدار الشهادة في أيام معدودة لتجنب أي تأخير في تجديد تراخيصك في جدة.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'أسعار تنافسية',
+        description: 'نقدم أفضل الأسعار في جدة مع الحفاظ على أعلى مستويات الجودة والاحترافية.',
+        icon: 'tabler:arrows-right-left',
+      },
+      {
+        title: 'تغطية جميع أحياء جدة',
+        description: 'نخدم جميع أحياء جدة بدون استثناء، بما فيها البغدادية، الروضة، الشاطئ، السلامة، وغيرها.',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    tagline="داخل الخدمة في جدة"
+    title="خطوات إصدار شهادة استيفاء الكاميرات في جدة"
+    items={[
+      {
+        title: 'فحص أنظمة المراقبة',
+        description: 'نتحقق من تركيب الكاميرات وعددها وزوايا التصوير ومدة التسجيل حسب اشتراطات الشرطة السعودية في جدة.',
+      },
+      {
+        title: 'تجهيز المستندات المطلوبة',
+        description: 'نجهز التقارير الفنية وقوائم الكاميرات وعقود الصيانة اللازمة لتقديم طلب الشهادة.',
+      },
+      {
+        title: 'إصدار الشهادة المعتمدة',
+        description: 'نقوم بإصدار شهادة استيفاء تركيب الكاميرات المعتمدة رسمياً من الشرطة السعودية في جدة.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1558001373-7b93ee48ffaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'فني يراجع كاميرات المراقبة في جدة',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">لماذا تختارنا في جدة؟</h3>
+      خبرة في اشتراطات الكاميرات بجدة، سرعة في الإنجاز، شهادة معتمدة، أسعار تنافسية، تغطية شاملة، دعم على مدار الساعة.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'المحلات التجارية والمطاعم',
+        description: `إصدار شهادة استيفاء الكاميرات لجميع المحلات والمطاعم في جدة لاستكمال التراخيص.`,
+      },
+      {
+        title: 'المستودعات والمصانع',
+        description: 'نوفر الشهادة للمستودعات والمصانع في جدة مع مراعاة تغطية جميع الزوايا الأمنية.',
+      },
+      {
+        title: 'المكاتب والشركات',
+        description: 'نساعد الشركات والمكاتب في جدة على استيفاء متطلبات الكاميرات الأمنية.',
+      },
+      {
+        title: 'الصالونات والمشاغل',
+        description: 'نغطي الصالونات والمشاغل في جدة ونضمن إصدار الشهادة دون تأخير.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'تركيب كاميرات مراقبة في منشأة بجدة',
+    }}
+  >
+    <Fragment slot="content">نضمن شهادة كاميرات شاملة لجميع الأنشطة التجارية في جدة.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'الالتزام بالأنظمة الأمنية',
+        description: 'تثبت شهادة استيفاء الكاميرات التزامك باشتراطات الشرطة السعودية وتجنبك المخالفات في جدة.',
+      },
+      {
+        title: 'تسهيل إجراءات التراخيص',
+        description: 'الشهادة مطلب أساسي لاستخراج وتجديد الرخص البلدية والتجارية في جدة دون تأخير.',
+      },
+      {
+        title: 'حماية المنشأة والموظفين',
+        description: 'نظام المراقبة المعتمد يقلل من مخاطر السرقات والحوادث ويوفر بيئة آمنة للجميع في جدة.',
+      },
+      {
+        title: 'دعم التحقيقات الأمنية',
+        description: 'تسجيلات الكاميرات تساعد الجهات الأمنية عند الحاجة، مما يعزز الأمان العام في جدة.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80',
+      alt: 'غرفة مراقبة كاميرات أمنية في جدة',
+    }}
+  >
+    <Fragment slot="content">مصمم خصيصاً لدعم أمان واستقرار أعمالك التجارية في جدة.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    title="احصل على شهادة استيفاء كاميرات المراقبة المعتمدة في جدة وافتح منشأتك بأمان."
+    items={[
+      {
+        title: 'الخطوة 1: <span class="font-medium">فحص أنظمة المراقبة</span>',
+        description: 'نتحقق من تركيب الكاميرات وعددها وزوايا التصوير ومدة التسجيل حسب اشتراطات الشرطة السعودية في جدة.',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'الخطوة 2: <span class="font-medium">تجهيز المستندات</span>',
+        description: 'نجهز التقارير الفنية وقوائم الكاميرات وعقود الصيانة المطلوبة لتقديم طلب الشهادة.',
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'الخطوة 3: <span class="font-medium">إصدار الشهادة</span>',
+        description: 'نقوم بإصدار شهادة استيفاء تركيب الكاميرات المعتمدة رسمياً من الشرطة السعودية.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'الخطوة 4: <span class="font-medium">استلام الشهادة</span>',
+        description: 'نسلمك الشهادة المعتمدة لتقديمها للجهات المختصة واستكمال إجراءات التراخيص بكل يسر في جدة.',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
+      alt: 'كاميرا مراقبة أمنية في جدة',
+    }}
+  />
+
+  <Features2
+    title="متطلبات شهادة استيفاء كاميرات المراقبة في جدة"
+    subtitle="نضمن لك استيفاء جميع المتطلبات والشروط اللازمة لإصدار شهادة استيفاء كاميرات المراقبة في جدة بنجاح وبدون أي ملاحظات"
+    tagline="المتطلبات الأساسية"
+    items={[
+      {
+        title: 'الالتزام باشتراطات الشرطة',
+        description: 'التأكد من التزام المنشأة بكافة اشتراطات أنظمة المراقبة حسب تعليمات الشرطة السعودية في جدة.',
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'توفر كاميرات مراقبة كافية',
+        description: 'تركيب عدد كافٍ من الكاميرات لتغطية المداخل والمخارج والمناطق الحيوية في المنشأة.',
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'جميع المستندات المطلوبة',
+        description: 'تجهيز كافة المستندات مثل قائمة الكاميرات وتقارير الفحص الفني وعقود الصيانة.',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'دفع الرسوم المقررة',
+        description: 'التأكد من سداد جميع الرسوم المقررة لإصدار الشهادة في جدة.',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'عقد صيانة ساري المفعول',
+        description: 'توفير عقد صيانة لأنظمة المراقبة مع شركة معتمدة لضمان استمرارية العمل.',
+        icon: 'flat-color-icons:advertising',
+      },
+      {
+        title: 'تقرير فني معتمد',
+        description: 'توفير تقارير الفحص الفني المعتمدة التي تثبت استيفاء المنشأة للاشتراطات في جدة.',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+      {
+        title: 'شهادة الكاميرات الأمنية',
+        description: 'شهادة تثبت تركيب الكاميرات وفق المواصفات المطلوبة من الجهات المختصة في جدة.',
+        icon: 'flat-color-icons:voice-presentation',
+      },
+      {
+        title: 'تغطية زوايا التصوير',
+        description: 'التأكد من زوايا التصوير المناسبة وعدم وجود نقاط عمياء في نطاق المراقبة.',
+        icon: 'flat-color-icons:business-contact',
+      },
+      {
+        title: 'مدة تسجيل لا تقل عن 30 يوم',
+        description: 'توفر أجهزة تسجيل تحفظ اللقطات لمدة 30 يوماً على الأقل حسب الاشتراطات في جدة.',
+        icon: 'flat-color-icons:database',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <BlogLatestPosts
+    title="تصفح آخر مستجدات أنظمة كاميرات المراقبة في جدة بالمدونة"
+    information={`نشاركك دورياً شروحات مفصلة حول اشتراطات كاميرات المراقبة وأحدث تعليمات الشرطة السعودية في جدة.
+                  كل مقال جديد نطرحه يمثل خطوة هامة تمكنك من حماية منشأتك وتفادي تأخير التراخيص لتصبح خبيراً في إدارة أنظمة الأمان.
+                  الالتزام بالأنظمة الأمنية هو استثمارك الذكي. شكراً لثقتكم.
+                `}
+  />
+
+  <FAQs
+    title="الأسئلة الشائعة"
+    subtitle="تعمق في الإجابات التالية للحصول على فهم شامل حول شهادة استيفاء كاميرات المراقبة في جدة وكيف يمكن لمنصتنا تسريع أعمالك."
+    tagline="الأسئلة الشائعة في جدة"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'هل تقدمون الخدمة في جميع أحياء جدة؟',
+        description:
+          'نعم، نغطي جميع أحياء ومناطق جدة بدون استثناء، بما فيها البغدادية، الروضة، الشاطئ، السلامة، وجميع أحياء محافظة جدة.',
+      },
+      {
+        title: 'ما هي شهادة استيفاء كاميرات المراقبة؟',
+        description: 'وثيقة رسمية تثبت التزام المنشأة بتركيب كاميرات مراقبة مطابقة لاشتراطات الشرطة السعودية.',
+      },
+      {
+        title: 'كم يستغرق إنجاز الخدمة في جدة؟',
+        description:
+          'نسعى لإنجاز الخدمة في أسرع وقت ممكن بعد التأكد من تركيب الكاميرات. تواصل معنا للاستفسار عن الوقت المتوقع.',
+      },
+      {
+        title: 'هل شهادة الكاميرات مطلوبة لجميع الأنشطة؟',
+        description: 'تختلف حسب نوع النشاط، لكن معظم الأنشطة التجارية في جدة تتطلبها لاستخراج وتجديد الرخص.',
+      },
+      {
+        title: 'ما الأنشطة التي تحتاج شهادة الكاميرات في جدة؟',
+        description: 'المحلات التجارية، المطاعم، المستودعات، الصالونات، المكاتب، والشقق المفروشة.',
+      },
+      {
+        title: 'كيف أتواصل معكم في جدة؟',
+        description: 'يمكنك التواصل معنا عبر واتساب أو الاتصال على 0572140531 في أي وقت، وفريقنا جاهز للرد عليك.',
+      },
+    ]}
+  />
+
+  <Stats
+    stats={[
+      { title: 'شهادة كاميرات تم إصدارها في جدة', amount: '+2.2K' },
+      { title: 'منشأة مخدومة في جدة', amount: '+1.9K' },
+      { title: 'نسبة القبول في جدة', amount: '99%' },
+      { title: 'حي مخدوم في جدة', amount: '40+' },
+    ]}
+  />
+
+  <CallToAction
+    id="contact"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'تواصل معنا عبر الواتساب فوراً في جدة',
+        href: 'https://wa.me/966572140531',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title"> احصل على شهادة الكاميرات في جدة الآن </Fragment>
+
+    <Fragment slot="subtitle">
+      لا تدع انتهاء الشهادة يعطل أعمالك التجارية في جدة ويعرضك للغرامات. <br class="hidden md:inline" />تواصل معنا الآن
+      وسنتولى جميع إجراءات إصدار الشهادة بسرعة واحترافية في جدة!
+    </Fragment>
+  </CallToAction>
+</Layout>

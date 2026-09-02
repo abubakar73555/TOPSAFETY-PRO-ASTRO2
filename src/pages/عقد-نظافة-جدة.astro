@@ -1,0 +1,284 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'عقد نظافة جدة | عقد نظافة بلدي معتمد لرخصتك التجارية',
+  description:
+    'احصل على عقد نظافة بلدي إلكتروني معتمد في جدة لمحلك أو منشأتك التجارية، مطلوب لإصدار وتجديد الرخصة عبر منصة بلدي وأمانة جدة. إصدار سريع عبر الواتساب.',
+  ignoreTitleTemplate: false,
+};
+
+// بيانات Schema — انسخها داخل head اللي يوفره PageLayout عندك إذا فيه slot مخصص للـ head
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'LocalBusiness',
+      name: 'توب سيفتي برو - عقد نظافة جدة',
+      description: 'خدمات إصدار عقد نظافة بلدي معتمد للمنشآت التجارية في جدة',
+      areaServed: {
+        '@type': 'City',
+        name: 'جدة',
+      },
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'جدة',
+        addressCountry: 'SA',
+      },
+      telephone: '+966572140531',
+      url: 'https://topsafetypro.com/jeddah-cleaning-contract/',
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'هل عقد النظافة إلزامي لرخصة أمانة جدة؟',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'نعم، لا يمكن إصدار أو تجديد الرخصة التجارية عبر منصة بلدي في جدة دون إرفاق عقد نظافة بلدي إلكتروني ساري المفعول.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'كم تستغرق مدة إصدار عقد النظافة في جدة؟',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'بعد استكمال البيانات المطلوبة، يتم إصدار العقد إلكترونيًا خلال وقت قصير، ويكون جاهزًا للرفع مباشرة على منصة بلدي.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'هل يشمل العقد خدمة مكافحة الحشرات؟',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'يمكن إصدار عقد مكافحة حشرات معتمد من بلدي بشكل منفصل أو مرفق مع عقد النظافة حسب متطلبات نشاطك التجاري.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'ما هي المستندات المطلوبة لإصدار العقد؟',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'يلزم توفر السجل التجاري وبيانات النشاط والعنوان الوطني للمنشأة في جدة لإتمام إصدار العقد إلكترونيًا.',
+          },
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Layout metadata={metadata}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'اطلب عقدك الآن عبر واتساب',
+        href: 'https://wa.me/966572140531',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+      { text: 'الأسئلة الشائعة', href: '#faqs' },
+    ]}
+    image={{ src: '~/assets/images/عقد-نظافة.webp', alt: 'عقد نظافة بلدي معتمد لجدة' }}
+  >
+    <Fragment slot="title">
+      عقد نظافة <span class="text-accent dark:text-white">جدة</span> — بلدي معتمد لرخصتك التجارية
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">توب سيفتي برو</span> يوفر لك عقد نظافة إلكتروني معتمد من أمانة جدة، جاهز للرفع
+        مباشرة على منصة بلدي لإصدار أو تجديد رخصتك التجارية دون تأخير.
+      </span>
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">عقد نظافة جدة جاهز خلال دقائق.</span>
+      نخدم المحلات، المطاعم، والمنشآت التجارية والسكنية في جميع أحياء جدة.
+    </Fragment>
+  </Hero>
+
+  <Note
+    title="مهم لأصحاب الأنشطة في جدة:"
+    description="أمانة جدة تشترط عقد نظافة بلدي إلكتروني ساري ضمن مستندات إصدار أو تجديد الرخصة التجارية عبر منصة بلدي."
+  />
+
+  <Features
+    id="features"
+    tagline="خدماتنا في جدة"
+    title="لماذا تختار عقد نظافة جدة من توب سيفتي برو"
+    subtitle="نتولى إجراءات العقد بالكامل إلكترونيًا لتوفير وقتك وضمان قبول ملفك من أول مرة."
+    items={[
+      {
+        title: 'اعتماد رسمي من أمانة جدة',
+        description: 'عقد معتمد ومطابق لاشتراطات منصة بلدي وأمانة جدة، جاهز للرفع مباشرة.',
+        icon: 'tabler:building-store',
+      },
+      {
+        title: 'إصدار إلكتروني سريع',
+        description: 'تعبئة البيانات وتوقيع العقد رقميًا دون الحاجة لزيارة أي مكتب.',
+        icon: 'tabler:file-text',
+      },
+      {
+        title: 'تغطية جميع أحياء جدة',
+        description: 'نخدم المنشآت في كافة أحياء ومناطق جدة التجارية والسكنية.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'إمكانية إضافة مكافحة الحشرات',
+        description: 'خيار إصدار عقد مكافحة حشرات معتمد مرفق مع عقد النظافة.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'دعم عبر واتساب',
+        description: 'تواصل مباشر لمتابعة حالة طلبك والرد على استفساراتك أول بأول.',
+        icon: 'tabler:brand-whatsapp',
+      },
+      {
+        title: 'أسعار واضحة بدون رسوم خفية',
+        description: 'تكلفة العقد معروفة مسبقًا دون أي مفاجآت عند الإصدار.',
+        icon: 'tabler:receipt',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    tagline="لماذا هذا العقد مطلوب"
+    title="عقد نظافة بلدي جدة ورخصتك التجارية"
+    items={[
+      {
+        title: 'شرط أساسي لمنصة بلدي',
+        description: 'دون عقد نظافة ساري، يُرفض طلب إصدار أو تجديد الرخصة التجارية في جدة.',
+      },
+      {
+        title: 'حماية من الغرامات',
+        description: 'يجنّبك العقد المخالفات البلدية الناتجة عن عدم وجود ترتيب رسمي للتخلص من النفايات.',
+      },
+      {
+        title: 'صورة احترافية لمنشأتك',
+        description: 'يعكس التزامك بمعايير النظافة أمام عملائك والجهات الرقابية في جدة.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/عقد-نظافة.webp',
+      alt: 'عقد نظافة معتمد لمنشآت جدة',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        متطلب رسمي لا يمكن تجاوزه
+      </h3>
+      نساعدك على استكمال هذا الشرط بأسرع وقت دون تعقيد.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    title="خطوات إصدار عقد نظافة جدة"
+    items={[
+      {
+        title: 'الخطوة 1: <span class="font-medium">إرسال بيانات النشاط</span>',
+        description: 'زودنا برقم السجل التجاري ونوع النشاط وموقع المنشأة في جدة عبر الواتساب.',
+        icon: 'tabler:send',
+      },
+      {
+        title: 'الخطوة 2: <span class="font-medium">تجهيز العقد</span>',
+        description: 'يقوم فريقنا بإعداد العقد وفق اشتراطات أمانة جدة ومنصة بلدي.',
+        icon: 'tabler:file-check',
+      },
+      {
+        title: 'الخطوة 3: <span class="font-medium">التوقيع الإلكتروني</span>',
+        description: 'توقّع العقد رقميًا باستخدام هويتك الوطنية بكل سهولة.',
+        icon: 'tabler:signature',
+      },
+      {
+        title: 'عقدك جاهز للرفع على بلدي',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/عقد-نظافة.webp',
+      alt: 'إصدار عقد نظافة إلكتروني في جدة',
+    }}
+  />
+
+  <FAQs
+    id="faqs"
+    title="الأسئلة الشائعة عن عقد نظافة جدة"
+    subtitle="كل ما تحتاج معرفته قبل إصدار عقدك."
+    tagline="الأسئلة الشائعة"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'هل عقد النظافة إلزامي لرخصة أمانة جدة؟',
+        description:
+          'نعم، لا يمكن إصدار أو تجديد الرخصة التجارية عبر منصة بلدي في جدة دون إرفاق عقد نظافة بلدي إلكتروني ساري المفعول.',
+      },
+      {
+        title: 'كم تستغرق مدة إصدار عقد النظافة في جدة؟',
+        description:
+          'بعد استكمال البيانات المطلوبة، يتم إصدار العقد إلكترونيًا خلال وقت قصير، ويكون جاهزًا للرفع مباشرة على منصة بلدي.',
+      },
+      {
+        title: 'هل يشمل العقد خدمة مكافحة الحشرات؟',
+        description:
+          'يمكن إصدار عقد مكافحة حشرات معتمد من بلدي بشكل منفصل أو مرفق مع عقد النظافة حسب متطلبات نشاطك.',
+      },
+      {
+        title: 'ما هي المستندات المطلوبة لإصدار العقد؟',
+        description: 'يلزم توفر السجل التجاري وبيانات النشاط والعنوان الوطني للمنشأة في جدة.',
+      },
+      {
+        title: 'هل الخدمة متاحة لكل أحياء جدة؟',
+        description: 'نعم، نغطي جميع الأحياء التجارية والسكنية في جدة دون استثناء.',
+      },
+    ]}
+  />
+
+  <Stats
+    stats={[
+      { title: 'عقد نظافة صادر في جدة', amount: '+1.2K' },
+      { title: 'رخصة تجارية مُفعّلة', amount: '+950' },
+      { title: 'حي مخدوم في جدة', amount: '+40' },
+      { title: 'وقت الإصدار (بالدقائق)', amount: '15' },
+    ]}
+  />
+
+  <CallToAction
+    id="contact"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'اطلب عقد نظافة جدة عبر واتساب',
+        href: 'https://wa.me/966572140531',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      عقد نظافة جدة&nbsp;—&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap"
+        >جاهز خلال دقائق</span
+      >
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      لا تؤخر رخصتك التجارية. <br class="hidden md:inline" />تواصل معنا الآن ليصلك عقد نظافة بلدي معتمد جاهز
+      للرفع على منصة بلدي.
+    </Fragment>
+  </CallToAction>
+</Layout>

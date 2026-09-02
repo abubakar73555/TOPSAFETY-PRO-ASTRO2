@@ -1,0 +1,359 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'عقد صيانة السلامة في مكة المكرمة - 0572140531',
+  description: 'عقود صيانة أنظمة وأدوات السلامة المعتمدة في مكة المكرمة، مع الفحص الدوري والصيانة الشاملة لضمان جاهزية المعدات وتلبية اشتراطات الدفاع المدني.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'طلب عقد الصيانة في مكة المكرمة فوراً',
+        href: '#contact',
+        icon: 'tabler:tool',
+      },
+      { text: 'اكتشف خدماتنا', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/hero-image.png', alt: 'توب سيفتي برو لعقد صيانة السلامة في مكة المكرمة' }}
+  >
+    <Fragment slot="title">
+      عقد صيانة <span class="hidden xl:inline">السلامة</span>
+      <span class="text-accent dark:text-white">في مكة المكرمة</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">منصة توب سيفتي برو</span> تقدم لك خدمة عقد صيانة أدوات السلامة من الحريق في مكة المكرمة
+        (المنطقة الغربية) لجميع المنشآت التجارية والصناعية، معتمد من الدفاع المدني.</span
+      >
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">توب سيفتي برو: عقد صيانة معتمد في مكة المكرمة.</span>
+      نخدم جميع أحياء مكة المكرمة: حي العزيزية، حي الرصيفة، حي الشوقية، حي العوالي، وجميع أحياء منطقة مكة المكرمة.
+    </Fragment>
+  </Hero>
+
+  <Note
+    title="فلسفتنا:"
+    description="السرعة الفائقة، الالتزام بمعايير الدفاع المدني، وتسهيل إجراءات إصدار عقود صيانة السلامة لعملائنا في مكة المكرمة"
+  />
+
+  <Features
+    id="features"
+    tagline="المميزات والخدمات في مكة المكرمة"
+    title="ما ستحصل عليه مع توب سيفتي برو في مكة المكرمة"
+    subtitle="واحدة من أفضل الخدمات المتكاملة في مكة المكرمة لإصدار عقد صيانة أدوات الوقاية والحماية من الحريق بامتثال كامل لأنظمة الدفاع المدني."
+    items={[
+      {
+        title: 'خبرة واسعة في مكة المكرمة',
+        description: 'لدينا خبرة واسعة في سوق مكة المكرمة، ونفهم تماماً متطلبات الدفاع المدني في المنطقة الغربية.',
+        icon: 'tabler:brand-tailwind',
+      },
+      {
+        title: 'عقد معتمد من الدفاع المدني',
+        description:
+          'نصدر عقد صيانة أدوات السلامة المعتمدة من الدفاع المدني، المطلوب لتجديد الرخص التجارية والدفاع المدني.',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'فحص شامل لأدوات السلامة',
+        description:
+          'نقوم بفحص جميع أنظمة مكافحة الحريق والإنذار في منشأتك في مكة المكرمة للتأكد من جاهزيتها واستيفائها للمعايير.',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'سرعة في الإنجاز',
+        description: 'نضمن لك إنجاز العقد وتجهيز التقارير الفنية في مكة المكرمة في أسرع وقت لتجنب التأخير.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'أسعار تنافسية',
+        description: 'نقدم أفضل الأسعار في سوق مكة المكرمة مع الحفاظ على أعلى مستويات الجودة والاحترافية.',
+        icon: 'tabler:arrows-right-left',
+      },
+      {
+        title: 'تغطية جميع أحياء مكة المكرمة',
+        description: 'نخدم جميع أحياء مكة المكرمة بدون استثناء، بما فيها العزيزية، الرصيفة، الشوقية، العوالي، وغيرها.',
+        icon: 'tabler:bulb',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    tagline="داخل الخدمة في مكة المكرمة"
+    title="خطوات إصدار عقد صيانة السلامة في مكة المكرمة"
+    items={[
+      {
+        title: 'فحص أنظمة السلامة',
+        description:
+          'نقوم بفحص شامل لجميع أدوات الوقاية والحماية من الحريق في منشأتك في مكة المكرمة، بما في ذلك طفايات الحريق، أنظمة الإنذار، ومضخات الحريق، للتأكد من جاهزيتها.',
+      },
+      {
+        title: 'تجهيز التقارير الفنية',
+        description: 'نقوم بتجهيز التقارير الفنية المعتمدة وتوثيق حالة الأنظمة تمهيداً لإصدار العقد.',
+      },
+      {
+        title: 'إصدار عقد الصيانة',
+        description: 'نقوم بإصدار عقد الصيانة المعتمد من الدفاع المدني وتسليمه للعميل في مكة المكرمة.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/عقد-صيانة-سلامة.png',
+      alt: 'فني صيانة أنظمة سلامة في مكة المكرمة',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">لماذا تختارنا في مكة المكرمة؟</h3>
+      خبرة واسعة في مكة المكرمة، سرعة في الإنجاز، معتمدون من الدفاع المدني، أسعار تنافسية، تغطية جميع أحياء مكة المكرمة، دعم
+      على مدار الساعة.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'صيانة طفايات الحريق وإعادة تعبئتها',
+        description: `نضمن جاهزية الطفايات وعملها بكفاءة في جميع أرجاء منشأتك في مكة المكرمة.`,
+      },
+      {
+        title: 'فحص أنظمة الإنذار وكواشف الدخان',
+        description: 'نتحقق من حساسية وكفاءة أنظمة الإنذار المبكر للحريق.',
+      },
+      {
+        title: 'صيانة مضخات الحريق وأنظمة الرش الآلي',
+        description: 'نضمن عمل المضخات والرشاشات الآلية بالشكل المطلوب في حالات الطوارئ.',
+      },
+      {
+        title: 'تقارير فنية معتمدة للجهات الرسمية',
+        description: 'نزودك بتقارير فنية رسمية يمكن تقديمها للدفاع المدني والبلدية في مكة المكرمة.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=2194&q=80',
+      alt: 'عقد صيانة السلامة المعتمد في مكة المكرمة',
+    }}
+  >
+    <Fragment slot="content"
+      >نضمن أن عقد الصيانة في مكة المكرمة يحافظ على جاهزية منشأتك الدائمة لأنظمة السلامة.</Fragment
+    >
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'الالتزام بالأنظمة وتجنب الغرامات',
+        description:
+          'عقد الصيانة شرط أساسي لتجديد رخصتي البلدية والدفاع المدني في مكة المكرمة، ويجنبك الغرامات المالية.',
+      },
+      {
+        title: 'تطوير وتحديث مستمر',
+        description: 'نتابع التعديلات الدورية في اشتراطات الدفاع المدني بمنطقة مكة المكرمة لنضمن تحديث عقدك باستمرار.',
+      },
+      {
+        title: 'جاهزية دائمة للطوارئ',
+        description: 'مع عقد الصيانة الدوري، تطمئن إلى أن أنظمة السلامة تعمل بكفاءة وتستجيب فوراً لأي طارئ.',
+      },
+      {
+        title: 'حلول متكاملة للمنشآت',
+        description: `نقدم حلولاً مرنة تناسب جميع أنواع المنشآت في مكة المكرمة، من المحلات الصغيرة إلى المصانع الكبرى.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'فريق صيانة يتابع مشاريع السلامة في مكة المكرمة',
+    }}
+  >
+    <Fragment slot="content">مصمم خصيصاً لدعم نمو واستقرار أعمالك التجارية في مكة المكرمة.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    title="احصل على عقد صيانة السلامة المعتمد في مكة المكرمة وافتح منشأتك بأمان."
+    items={[
+      {
+        title: 'الخطوة 1: <span class="font-medium">فحص أنظمة السلامة</span>',
+        description:
+          'نقوم بفحص شامل لجميع أدوات الوقاية والحماية من الحريق في منشأتك في مكة المكرمة، بما في ذلك طفايات الحريق، أنظمة الإنذار، ومضخات الحريق.',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'الخطوة 2: <span class="font-medium">تجهيز التقارير الفنية</span>',
+        description: 'نقوم بتجهيز التقارير الفنية المعتمدة اللازمة لإصدار العقد وتوثيق حالة الأنظمة.',
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'الخطوة 3: <span class="font-medium">إصدار العقد</span>',
+        description: 'نقوم بإصدار عقد الصيانة المعتمد من الدفاع المدني رسمياً في مكة المكرمة.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'الخطوة 4: <span class="font-medium">استلام العقد والتقارير</span>',
+        description: 'نسلمك العقد والتقارير الفنية لتقديمها للجهات المختصة وتجديد تراخيصك بكل يسر.',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
+      alt: 'إصدار عقد صيانة السلامة بنجاح في مكة المكرمة',
+    }}
+  />
+
+  <Features2
+    title="متطلبات عقد صيانة السلامة في مكة المكرمة"
+    subtitle="نضمن لك استيفاء جميع المتطلبات والشروط اللازمة لإصدار عقد صيانة أدوات السلامة في مكة المكرمة بنجاح وبدون أي ملاحظات"
+    tagline="المتطلبات الأساسية"
+    items={[
+      {
+        title: 'التزام بمعايير السلامة',
+        description: 'التأكد من التزام المنشأة في مكة المكرمة بكافة معايير السلامة العامة وأنظمة الحماية من الحريق.',
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'توفر أدوات الوقاية',
+        description:
+          'التأكد من توفر جميع أدوات الوقاية والحماية من الحريق مثل طفايات الحريق، أنظمة الإنذار، ومخارج الطوارئ.',
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'جميع المستندات المطلوبة',
+        description: 'تجهيز كافة المستندات مثل السجل التجاري، رخصة البناء، والعنوان الوطني للمنشأة.',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'دفع الرسوم المقررة',
+        description: 'التأكد من سداد جميع الرسوم المقررة لإصدار العقد في مكة المكرمة.',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'فحص مبدئي للموقع',
+        description: 'الكشف المبدئي على المنشأة لتحديد عدد الأجهزة وأنظمة السلامة المراد صيانتها.',
+        icon: 'flat-color-icons:advertising',
+      },
+      {
+        title: 'تقرير فني معتمد',
+        description: 'توفير تقارير الفحص الفني المعتمدة التي تثبت استيفاء المنشأة لاشتراطات السلامة.',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+      {
+        title: 'عقد الصيانة الموحد',
+        description: 'إصدار العقد بالنموذج المعتمد من الدفاع المدني والموقع من الطرفين.',
+        icon: 'flat-color-icons:voice-presentation',
+      },
+      {
+        title: 'خطط الصيانة الدورية',
+        description: 'تحديد جدول زيارات الصيانة الدورية (كل 3 أو 6 أشهر) حسب العقد.',
+        icon: 'flat-color-icons:business-contact',
+      },
+      {
+        title: 'دعم فني طوال مدة العقد',
+        description: 'نوفر دعماً فنياً على مدار الساعة للإبلاغ عن الأعطال والتعامل معها فوراً.',
+        icon: 'flat-color-icons:database',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <BlogLatestPosts
+    title="تصفح آخر مستجدات أنظمة عقود الصيانة في مكة المكرمة بالمدونة"
+    information={`نشاركك دورياً شروحات مفصلة حول عقود صيانة السلامة واشتراطات الدفاع المدني في مكة المكرمة والمنطقة الغربية.
+                  كل مقال جديد نطرحه يمثل خطوة هامة تمكنك من حماية منشأتك وتفادي تأخير التراخيص لتصبح خبيراً في إدارة شؤون السلامة.
+                  الالتزام بالصيانة الدورية هو استثمارك الذكي. شكراً لثقتكم.
+                `}
+  />
+
+  <FAQs
+    title="الأسئلة الشائعة"
+    subtitle="تعمق في الإجابات التالية للحصول على فهم شامل حول عقد صيانة السلامة في مكة المكرمة وكيف يمكن لمنصتنا تسريع أعمالك."
+    tagline="الأسئلة الشائعة في مكة المكرمة"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'هل تقدمون الخدمة في جميع أحياء مكة المكرمة؟',
+        description:
+          'نعم، نغطي جميع أحياء ومناطق مكة المكرمة بدون استثناء، بما فيها العزيزية، الرصيفة، الشوقية، العوالي، وجميع أحياء منطقة مكة المكرمة.',
+      },
+      {
+        title: 'ما هو عقد صيانة السلامة؟',
+        description:
+          'هو عقد رسمي معتمد من الدفاع المدني يضمن الصيانة الدورية لأنظمة مكافحة الحريق والإنذار في المنشأة، وهو شرط أساسي لتجديد التراخيص.',
+      },
+      {
+        title: 'كم يستغرق إنجاز العقد في مكة المكرمة؟',
+        description: 'نسعى لإنجاز الخدمة في أسرع وقت ممكن بعد الكشف المبدئي. تواصل معنا للاستفسار عن الوقت المتوقع.',
+      },
+      {
+        title: 'ما مدة عقد صيانة السلامة؟',
+        description: 'غالباً سنة واحدة مع إمكانية التجديد حسب احتياج المنشأة.',
+      },
+      {
+        title: 'ماذا يشمل عقد الصيانة؟',
+        description: 'فحص طفايات الحريق، مضخات الحريق، لوحات الإنذار، كواشف الدخان، وأنظمة الرش الآلي.',
+      },
+      {
+        title: 'كم مرة يجب صيانة أنظمة السلامة؟',
+        description: 'كل 3 أو 6 أشهر حسب نوع الجهاز والعقد المبرم.',
+      },
+    ]}
+  />
+
+  <Stats
+    stats={[
+      { title: 'عقد صيانة تم إصداره في مكة المكرمة', amount: '+1.8K' },
+      { title: 'منشأة في مكة المكرمة', amount: '+1.5K' },
+      { title: 'نسبة القبول في مكة المكرمة', amount: '99%' },
+      { title: 'أحياء مكة المكرمة المخدومة', amount: '25+' },
+    ]}
+  />
+
+  <CallToAction
+    id="contact"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'تواصل معنا عبر الواتساب فوراً في مكة المكرمة',
+        href: 'https://wa.me/966572140531',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title"> احصل على عقد الصيانة في مكة المكرمة الآن </Fragment>
+
+    <Fragment slot="subtitle">
+      لا تدع انتهاء العقد يعطل أعمالك التجارية في مكة المكرمة ويعرضك للغرامات. <br class="hidden md:inline" />تواصل معنا
+      الآن وسنتولى جميع إجراءات إصدار العقد بسرعة واحترافية في مكة المكرمة!
+    </Fragment>
+  </CallToAction>
+</Layout>

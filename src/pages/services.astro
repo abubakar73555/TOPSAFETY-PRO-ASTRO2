@@ -1,0 +1,224 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'خدمات التراخيص وعقود السلامة',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    tagline="خدماتنا"
+    title="تسهيل استخراج وتجديد رخص الدفاع المدني والبلدية"
+    subtitle="نقوم بمساعدتك في تجهيز وإعداد كافة متطلبات السلامة والبلدية لمنشأتك التجارية، من تقارير فنية وعقود صيانة وشهادات معتمدة لتسريع إجراءات التراخيص."
+    actions={[{ variant: 'primary', target: '_blank', text: 'تواصل معنا الآن', href: 'https://wa.me/966572140531' }]}
+    image={{
+      src:'~/assets/images/رخصه-الدفاع-المدني.webp',
+      alt: 'خدمات استخراج رخص الدفاع المدني والبلدية',
+    }}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="الخدمات التي نقدمها"
+    subtitle="نسعى لتقديم حلول متكاملة تضمن توافق منشأتك مع الاشتراطات الرسمية بسهولة."
+    columns={3}
+    items={[
+      {
+        title: 'إصدار رخصة الدفاع المدني',
+        description:
+          'متابعة وإنهاء إجراءات إصدار تراخيص الدفاع المدني الجديدة لجميع الأنشطة التجارية لضمان سلامة المنشأة قانونياً.',
+        icon: 'tabler:shield',
+      },
+      {
+        title: 'تجديد رخصة الدفاع المدني',
+        description:
+          'تجديد تراخيص الدفاع المدني المنتهية أو القريبة من الانتهاء لتفادي الغرامات المالية وضمان استمرارية عملك.',
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'إصدار رخصة البلدية',
+        description: `مساعدة شاملة في خطوات استخراج وإصدار رخص البلدية عبر منصة بلدي ومطابقتها للاشتراطات الفنية المقررة.`,
+        icon: 'tabler:building',
+      },
+      {
+        title: 'تجديد رخصة البلدية',
+        description:
+          'تسهيل ومتابعة تجديد رخص البلدية للأنشطة المختلفة وتحديث كافة البيانات والوثائق المطلوبة نظامياً.',
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'إصدار تقرير فني رخصة بلدية',
+        description:
+          'إصدار التقارير الفنية المعتمدة اللازمة لإصدار أو تجديد رخصة البلدية من مكاتب هندسية مؤهلة.',
+        icon: 'tabler:file-text',
+      },
+      {
+        title: 'شهادة تركيبات أدوات السلامة',
+        description:
+          'إصدار وتجهيز شهادة تركيب أدوات ومعدات السلامة المطلوبة لإنهاء إجراءات رخصة البلدية والدفاع المدني.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'عقود صيانة سلامة',
+        description:
+          'توفير عقود صيانة سنوية معتمدة لأنظمة السلامة ومكافحة الحريق متوافقة تماماً مع اشتراطات الدفاع المدني.',
+        icon: 'tabler:clipboard-list',
+      },
+      {
+        title: 'شهادة استيفاء كاميرات المراقبة',
+        description: `إصدار وتوفير شهادة استيفاء اشتراطات تركيب كاميرات المراقبة (شهادة إنجاز سابقاً) لتأمين وتراخيص المنشآت.`,
+        icon: 'tabler:video',
+      },
+      {
+        title: 'استشارات فنية وتراخيص',
+        description:
+          'نقدم الدعم والمشورة الفنية اللازمة لتسهيل معاملات التراخيص المختلفة والإجابة على كافة استفساراتكم.',
+        icon: 'tabler:info-circle',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'سرعة في الإنجاز',
+        description:
+          'نعمل بجد لإنهاء المعاملات والأوراق الفنية في أقصر وقت ممكن لتفادي تأخير أعمالك.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'توافق كامل مع الأنظمة',
+        description:
+          'نحرص على أن تكون كافة المستندات والتقارير متوافقة تماماً مع شروط بلدي والدفاع المدني.',
+        icon: 'tabler:checks',
+      },
+      {
+        title: 'وثائق معتمدة ورسمية',
+        description:
+          'جميع عقود الصيانة والتقارير الفنية تصدر من جهات مرخصة ومعتمدة بشكل رسمي.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'متابعة مستمرة ودعم مباشر',
+        description:
+          'نبقى على تواصل دائم معك لإطلاعك على مستجدات طلبك والإجابة عن استفساراتك عبر الواتساب.',
+        icon: 'tabler:message-circle',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/شهاده-تركيب-ادوات-السلامه.webp',
+      alt: 'شهادة سلامة',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">أبرز مزايانا</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'توفير الوقت والجهد',
+        description:
+          'نتولى الإجراءات والمعاملات الإلكترونية نيابة عنك لتركز وقتك على تطوير وإدارة منشأتك.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'تجنب المخالفات والغرامات',
+        description:
+          'نساعدك في تجديد الرخص والالتزامات في مواعيدها المحددة لتفادي أي عقوبات أو غرامات بلدية.',
+        icon: 'tabler:alert-triangle',
+      },
+      {
+        title: 'تكلفة اقتصادية ملائمة',
+        description:
+          'نقدم خدماتنا وعقود الصيانة بأسعار تنافسية ومدروسة تناسب ميزانية منشأتك التجارية.',
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'تواصل فوري وسريع',
+        description:
+          'تواصل مباشر معنا عبر الواتساب للحصول على الخدمة المطلوبة ومتابعتها في أي وقت.',
+        icon: 'tabler:file-download',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/hero-image.png',
+      alt: 'بوابة سلامة',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">فوائد التعامل معنا</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    title="آراء من عملائنا الكرام"
+    testimonials={[
+      {
+        testimonial: `تم إصدار رخصة الدفاع المدني وعقد صيانة السلامة لمنشأتنا بسرعة كبيرة وتجاوب ممتاز ومحترف من الفريق المساعد. وفروا علينا جهداً كبيراً.`,
+        name: 'أبو فهد',
+        job: 'صاحب نشاط تجاري',
+        image: {
+          src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
+          alt: 'Emily Kennedy Image',
+        },
+      },
+      {
+        testimonial: `ساعدوني بشكل فعال في استخراج التقرير الفني المعتمد وشهادة تركيبات أدوات السلامة اللازمة للبلدية في وقت قياسي وبكل سهولة.`,
+        name: 'م. خالد العتيبي',
+        job: 'مدير عمليات وتشغيل',
+        image: {
+          src: 'https://images.unsplash.com/photo-1561406636-b80293969660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Sarah Hansen Image',
+        },
+      },
+      {
+        testimonial: `حصلنا على شهادة استيفاء الكاميرات وعقد الصيانة بسهولة تامة من خلال التواصل معهم على الواتساب. ملتزمون جداً في تعاملهم وخدمتهم.`,
+        name: 'سارة الشمري',
+        job: 'مؤسسة صالون نسائي',
+        image: {
+          src: 'https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=824&q=80',
+          alt: 'Mark Wilkinson Image',
+        },
+      },
+    ]}
+    callToAction={{
+      target: '_blank',
+      text: 'تواصل معنا مباشرة عبر الواتساب',
+      href: 'https://wa.me/966572140531',
+      icon: 'tabler:chevron-right',
+    }}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'تواصل معنا عبر الواتساب',
+        href: 'https://wa.me/966572140531',
+      },
+    ]}
+    title="هل تحتاج لإصدار أو تجديد تراخيص منشأتك الآن؟"
+    subtitle="لا تتردد في مراسلتنا وتزويدنا بمتطلباتك، لنتولى عنك إجراءات عقود السلامة، التقارير الفنية، وتراخيص الدفاع المدني والبلدية."
+  />
+</Layout>

@@ -1,0 +1,364 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'تقرير فوري رقم التقرير الفني - 0572140531',
+  description: 'احصل على تقرير فني فوري معتمد وموثق بأسرع وقت، مع استيفاء كافة الشروط والمتطلبات الرسمية لإنجاز معاملاتك بكل سهولة.',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'احصل على تقريرك الفني الفوري الآن',
+        href: '#contact',
+        icon: 'tabler:file-text',
+      },
+      { text: 'إكتشف خدماتنا', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/hero-image.png', alt: 'توب سيفتي برو لإصدار التقارير الفنية الفورية' }}
+  >
+    <Fragment slot="title">
+      تقرير فني <span class="hidden xl:inline">فوري</span>
+      <span class="text-accent dark:text-white">عبر بوابة سلامة</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">منصة توب سيفتي برو</span> تقدم لك إصدار التقارير الفنية الفورية لتجديد رخصة البلدية والدفاع
+        المدني عبر بوابة سلامة بسرعة واحترافية للأنشطة الصغيرة.</span
+      >
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">توب سيفتي برو: اعتماد فوري.</span>
+      مكتب هندسي معتمد من الدفاع المدني، نخدم جميع مدن المملكة العربية السعودية: جدة، الرياض، مكة، الدمام، المدينة، الطائف،
+      الخبر، القصيم، تبوك، أبها.
+    </Fragment>
+  </Hero>
+
+  <Note
+    title="فلسفتنا:"
+    description="السرعة الفائقة، الالتزام بالمعايير، وتسهيل الإجراءات النظامية لعملائنا عبر بوابة سلامة"
+  />
+
+  <Features
+    id="features"
+    tagline="المميزات والخدمات"
+    title="ما ستحصل عليه مع توب سيفتي برو"
+    subtitle="واحدة من أفضل الخدمات الهندسية المتكاملة في السوق السعودي لإصدار التقارير الفنية الفورية بامتثال كامل لكود البناء واشتراطات الدفاع المدني."
+    items={[
+      {
+        title: 'مكتب هندسي معتمد من الدفاع المدني',
+        description:
+          'نحن مكتب هندسي متخصص بمجال السلامة من الحريق معتمد من قبل إدارة الدفاع المدني، مما يضمن قبول تقاريرك رسمياً.',
+        icon: 'tabler:brand-tailwind',
+      },
+      {
+        title: 'إصدار فوري وآلي',
+        description: 'يتم إعداد التقرير الفني بشكل فوري وآلي عبر بوابة سلامة، مما يضمن سرعة الإصدار ودقة المعلومات.',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'ربط مباشر مع بوابة سلامة',
+        description: 'نصدر تقاريرك الفنية مباشرة عبر بوابة سلامة ومنصة بلدي، مما يضمن قبولها فوراً دون أي ملاحظات.',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'سرعة استثنائية في الإنجاز',
+        description: 'نضمن لك إصدار التقرير الفني الفوري في نفس اليوم، مما يوفر عليك الوقت والجهد.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'أسعار تنافسية',
+        description: 'نقدم أفضل الأسعار في السوق مع الحفاظ على أعلى مستويات الجودة والاحترافية في إعداد التقارير.',
+        icon: 'tabler:arrows-right-left',
+      },
+      {
+        title: 'تغطية جميع مدن المملكة',
+        description:
+          'نخدم جميع مدن المملكة العربية السعودية: جدة، الرياض، مكة، الدمام، المدينة، الطائف، الخبر، القصيم، تبوك، أبها.',
+        icon: 'tabler:bulb',
+      },
+    ]}
+  />
+
+  <Content
+    isReversed
+    tagline="ما هو التقرير الفني الفوري؟"
+    title="التقرير الفني الفوري: ركيزة أساسية لسلامة منشأتك"
+    items={[
+      {
+        title: 'تعريف التقرير الفني الفوري',
+        description:
+          'يُعد إصدار تقرير فني فوري أحد الركائز الأساسية لضمان التزام المنشآت بمتطلبات الوقاية والحماية من الحريق، حيث يتم من خلاله تقييم جاهزية المنشأة وسلامة تجهيزاتها لضمان حماية الأرواح والممتلكات.',
+      },
+      {
+        title: 'الإعداد الآلي عبر بوابة سلامة',
+        description:
+          'يتم إعداد التقرير الفني بشكل فوري وآلي عبر "بوابة سلامة"، وهي المنصة المعتمدة لإصدار وتجديد تراخيص الدفاع المدني. تتيح البوابة نموذج كشف رقمي مصمم خصيصاً لتوثيق ما يوجد داخل المنشأة من تجهيزات الوقاية والحماية من الحريق.',
+      },
+      {
+        title: 'من يحتاج التقرير الفني الفوري؟',
+        description:
+          'الأنشطة الفورية ذات المساحة أقل من 150 متراً في الغالب عند إصدار أو تجديد رخصة البلدية عبر منصة بلدي.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'التقرير الفني الفوري',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">ضمان سلامة منشأتك</h3>
+      نضمن لك الحصول على تقرير فني فوري معتمد من الدفاع المدني يلبي جميع متطلبات البلدية ويضمن سلامة منشأتك بشكل كامل.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'طفايات الحريق',
+        description: `التأكد من توزيع طفايات الحريق بشكل صحيح وصلاحيتها للاستخدام في جميع أنحاء المنشأة.`,
+      },
+      {
+        title: 'أجهزة كشف الدخان',
+        description: 'فحص كفاءة عمل أجهزة الكشف لضمان استشعار الدخان في الوقت المناسب وتنبيه occupants فوراً.',
+      },
+      {
+        title: 'أنظمة الإنذار والطوارئ',
+        description: 'مراجعة عمل أجهزة الإنذار ونظم الإضاءة الخاصة بالطوارئ لضمان فعاليتها في حالات الطوارئ.',
+      },
+      {
+        title: 'أنظمة الإطفاء والإشارات الإرشادية',
+        description:
+          'التحقق من جاهزية أنظمة الإطفاء الموصولة بشبكات المياه، والتأكد من وضوح إشارات الإخلاء ومخارج الطوارئ.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=2194&q=80',
+      alt: 'عناصر التقرير الفني الفوري',
+    }}
+  >
+    <Fragment slot="content">نضمن لك تقييم شامل لجميع عناصر السلامة في منشأتك.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'الدقة والسرعة في الإصدار',
+        description: 'يتم إصدار التقرير الفني الفوري بدقة عالية وسرعة فائقة، مما يساهم في تسريع إجراءات تجديد الرخصة.',
+      },
+      {
+        title: 'إعداد آلي عبر بوابة سلامة',
+        description: 'يتيح النظام تسجيل الملاحظات والنتائج بشكل آلي ومنظم، مما يضمن دقة المعلومات وسهولة الوصول إليها.',
+      },
+      {
+        title: 'شفافية كاملة في العملية',
+        description: 'يمكن للمسؤولين متابعة حالة الكشف بسهولة من خلال البوابة، مما يضمن شفافية كاملة في العملية.',
+      },
+      {
+        title: 'متطلب أساسي للتراخيص',
+        description: `يُعتبر التقرير الفني الفوري أحد المتطلبات الأساسية لإصدار أو تجديد تراخيص الدفاع المدني ورخصة البلدية.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      alt: 'مميزات التقرير الفني الفوري',
+    }}
+  >
+    <Fragment slot="content">نوفر لك تقريراً فنياً فورياً معتمداً بسرعة واحترافية.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps
+    title="احصل على تقريرك الفني الفوري المعتمد في أسرع وقت."
+    items={[
+      {
+        title: 'الخطوة 1: <span class="font-medium">تقديم الطلب</span>',
+        description:
+          'تواصل معنا عبر الواتساب أو الهاتف وقدم بيانات منشأتك الأساسية: الرقم الموحد، السجل التجاري، بيانات الموقع، وعدد الأدوار.',
+        icon: 'tabler:package',
+      },
+      {
+        title: 'الخطوة 2: <span class="font-medium">مراجعة البيانات</span>',
+        description: 'يقوم فريقنا الهندسي بمراجعة بيانات المنشأة والتأكد من استيفاء جميع متطلبات التقرير الفني الفوري.',
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'الخطوة 3: <span class="font-medium">إعداد التقرير</span>',
+        description:
+          'يتم إعداد التقرير الفني الفوري بشكل آلي عبر بوابة سلامة، مع تسجيل جميع عناصر السلامة المتوفرة في المنشأة.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'الخطوة 4: <span class="font-medium">إصدار التقرير</span>',
+        description: 'يتم إصدار التقرير الفني الفوري وإدخال رقم التقرير في بوابة سلامة ومنصة بلدي، جاهز لرفع الطلب.',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80',
+      alt: 'خطوات إصدار التقرير الفني الفوري',
+    }}
+  />
+
+  <Features2
+    title="مميزات التقرير الفني الفوري"
+    subtitle="نقدم لك تقريراً فنياً فورياً معتمداً يضمن لك تجديد رخصة البلدية بسرعة وسهولة"
+    tagline="مميزاتنا"
+    items={[
+      {
+        title: 'الدقة والسرعة في الإصدار',
+        description: 'يتم إصدار التقرير الفني الفوري بدقة عالية وسرعة فائقة، مما يساهم في تسريع إجراءات تجديد الرخصة.',
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'إعداد آلي عبر بوابة سلامة',
+        description: 'يتيح النظام تسجيل الملاحظات والنتائج بشكل آلي ومنظم، مما يضمن دقة المعلومات وسهولة الوصول إليها.',
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'شفافية كاملة في العملية',
+        description: 'يمكن للمسؤولين متابعة حالة الكشف بسهولة من خلال البوابة، مما يضمن شفافية كاملة في العملية.',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'متطلب أساسي للتراخيص',
+        description:
+          'يُعتبر التقرير الفني الفوري أحد المتطلبات الأساسية لإصدار أو تجديد تراخيص الدفاع المدني ورخصة البلدية.',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'تسجيل آلي للنتائج',
+        description: 'يتم تسجيل جميع نتائج الفحص بشكل آلي في النظام، مما يسهل عملية المتابعة والمراجعة.',
+        icon: 'flat-color-icons:advertising',
+      },
+      {
+        title: 'متابعة فورية للحالة',
+        description: 'يمكنك متابعة حالة التقرير الفني الفوري بشكل فوري عبر بوابة سلامة.',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+      {
+        title: 'تعزيز مستوى الأمان',
+        description: 'يساعد التقرير الفني الفوري في تعزيز مستوى الأمان داخل المنشآت وتقليل مخاطر الحوادث.',
+        icon: 'flat-color-icons:voice-presentation',
+      },
+      {
+        title: 'توفير قاعدة بيانات شاملة',
+        description: 'يوفر التقرير الفني الفوري قاعدة بيانات شاملة تساعد الجهات المختصة على متابعة مدى التزام المنشآت.',
+        icon: 'flat-color-icons:business-contact',
+      },
+      {
+        title: 'تسهيل عمليات المراجعة',
+        description: 'يُسهل التقرير الفني الفوري عمليات المراجعة والتقييم الدوري لتجهيزات الحماية من الحريق.',
+        icon: 'flat-color-icons:database',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <BlogLatestPosts
+    title="تصفح آخر مستجدات اشتراطات السلامة بالمدونة"
+    information={`نشاركك دورياً شروحات مفصلة حول كود البناء السعودي واشتراطات منصة بلدي والدفاع المدني وبوابة سلامة.
+                  كل مقال جديد نطرحه يمثل خطوة هامة تمكنك من حماية منشأتك وتفادي تأخير التراخيص لتصبح خبيراً في إدارة شؤون منشأتك.
+                  الوقاية هي استثمارك الذكي. شكراً لثقتكم.
+                `}
+  />
+
+  <FAQs
+    title="الأسئلة الشائعة"
+    subtitle="تعمق في الإجابات التالية للحصول على فهم شامل حول التقرير الفني الفوري وكيف يمكن لمنصتنا تسريع أعمالك التجارية."
+    tagline="الأسئلة الشائعة"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'ما هو التقرير الفني الفوري؟',
+        description:
+          'التقرير الفني الفوري هو تقرير يُصدر للأنشطة الفورية ذات المساحة الصغيرة عبر بوابة سلامة بشكل آلي وسريع.',
+      },
+      {
+        title: 'من يحتاج التقرير الفني الفوري؟',
+        description:
+          'الأنشطة الفورية ذات المساحة أقل من 150 متراً في الغالب عند إصدار أو تجديد رخصة البلدية عبر منصة بلدي.',
+      },
+      {
+        title: 'كم يستغرق إصدار التقرير الفني الفوري؟',
+        description: 'يُصدر التقرير الفوري بشكل سريع عبر بوابة سلامة، تواصل معنا للحصول على الخدمة في أسرع وقت.',
+      },
+      {
+        title: 'هل يختلف التقرير الفوري عن غير الفوري؟',
+        description:
+          'نعم، التقرير الفوري للأنشطة الصغيرة ويصدر بشكل آلي، أما غير الفوري فيتطلب فحصاً ميدانياً وعقد صيانة.',
+      },
+      {
+        title: 'ما هي العناصر التي يشملها التقرير الفني الفوري؟',
+        description:
+          'يشمل التقرير: طفايات الحريق، أجهزة كشف الدخان، أنظمة الإنذار والطوارئ، أنظمة الإطفاء، والإشارات الإرشادية لمخارج الطوارئ.',
+      },
+      {
+        title: 'من يصدر التقرير الفني الفوري؟',
+        description:
+          'يصدر التقرير الفني الفوري مكتب هندسي متخصص بمجال السلامة من الحريق معتمد من قبل إدارة الدفاع المدني. نحن مؤهلون من الدفاع المدني كمكتب هندسي.',
+      },
+    ]}
+  />
+
+  <Stats
+    stats={[
+      { title: 'تقرير فني فوري صادر', amount: '+6K' },
+      { title: 'منشأة تم تأمينها', amount: '+5K' },
+      { title: 'تقييمات إيجابية', amount: '100%' },
+      { title: 'مدن المملكة المخدومة', amount: '13+' },
+    ]}
+  />
+
+  <CallToAction
+    id="contact"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'تواصل معنا عبر الواتساب فوراً',
+        href: 'https://wa.me/966572140531',
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
+      },
+    ]}
+  >
+    <Fragment slot="title"> احصل على تقريرك الفني الفوري الآن </Fragment>
+
+    <Fragment slot="subtitle">
+      نحن مكتب هندسي معتمد من الدفاع المدني، نصدر التقرير الفني الفوري بسرعة واحترافية في جميع مدن المملكة. <br
+        class="hidden md:inline"
+      />تواصل معنا الآن!
+    </Fragment>
+  </CallToAction>
+</Layout>
