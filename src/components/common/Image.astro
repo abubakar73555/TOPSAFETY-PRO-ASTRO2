@@ -87,7 +87,7 @@ const aspectRatio = w && h ? w / h : undefined;
 // --- Layout → inline style mapping -----------------------------------------
 const px = (v?: number) => (v == null ? undefined : `${v}px`);
 const declarations: Array<[string, string | undefined]> = [
-  ['object-fit', 'contain'],
+  ['object-fit', 'fill'],
   ['object-position', 'center'],
 ];
 
