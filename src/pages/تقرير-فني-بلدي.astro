@@ -25,9 +25,12 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'طلب تقرير فني بلدي الآن',
-        href: '#contact',
-        icon: 'tabler:file-text',
+        text: 'طلب تقرير فني بلدي فوراً عبر الواتساب',
+        href:
+          'https://wa.me/966572140531?text=' +
+          encodeURIComponent('السلام عليكم، أرغب في طلب إصدار تقرير فني بلدي معتمد لمنشأتي'),
+        target: '_blank',
+        icon: 'tabler:brand-whatsapp',
       },
       { text: 'تفاصيل التقرير الهندسي', href: '#features' },
     ]}
@@ -44,10 +47,23 @@ const metadata = {
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
         <span class="font-semibold">منصة توب سيفتي برو</span> توفر لك إعداد ورفع <strong>التقرير الفني البلدي</strong> عبر مكتب
-        هندسي معتمد لدى وزارة البلديات والإسكان عبر منصة بلدي (Balady)، لفحص الموقع ومطابقته للاشتراطات الفنية والبلدية وكود البناء السعودي.</span
+        هندسي معتمد لدى وزارة البلديات والإسكان عبر منصة بلدي (Balady)، ومنصة مدينتي لأمانة جدة، لفحص الموقع ومطابقته للاشتراطات الفنية والبلدية وكود البناء السعودي.</span
       >
       <span class="block mb-1 sm:hidden font-bold text-blue-600">اعتماد مباشر عبر منصة بلدي لجميع الأنشطة.</span>
-      خدمات هندسية متكاملة تغطي كافة مناطق وأمانات المملكة: الرياض، جدة، مكة المكرمة، الدمام، المدينة المنورة، الطائف، الخبر، والقصيم.
+      خدمات هندسية متكاملة تغطي كافة مناطق وأمانات المملكة:
+      <a href="/تقرير-فني-سلامة-الرياض" class="text-primary hover:underline font-semibold">الرياض</a>،
+      <a href="/تقرير-فني-سلامة-جدة" class="text-primary hover:underline font-semibold">جدة</a>،
+      <a href="/تقرير-فني-سلامة-مكة" class="text-primary hover:underline font-semibold">مكة المكرمة</a>،
+      <a href="/تقرير-فني-سلامة-الدمام" class="text-primary hover:underline font-semibold">الدمام</a>،
+      <a href="/تقرير-فني-سلامة-المدينة" class="text-primary hover:underline font-semibold">المدينة المنورة</a>،
+      <a href="/تقرير-فني-سلامة-الخبر" class="text-primary hover:underline font-semibold">الخبر</a>،
+      <a href="/تقرير-فني-سلامة-الطائف" class="text-primary hover:underline font-semibold">الطائف</a>،
+      <a href="/تقرير-فني-سلامة-القصيم" class="text-primary hover:underline font-semibold">القصيم</a>،
+      <a href="/تقرير-فني-سلامة-تبوك" class="text-primary hover:underline font-semibold">تبوك</a>،
+      <a href="/تقرير-فني-سلامة-أبها" class="text-primary hover:underline font-semibold">أبها</a>،
+      <a href="/تقرير-فني-سلامة-حائل" class="text-primary hover:underline font-semibold">حائل</a>،
+      <a href="/تقرير-فني-سلامة-جازان" class="text-primary hover:underline font-semibold">جازان</a>،
+      و<a href="/تقرير-فني-سلامة-نجران" class="text-primary hover:underline font-semibold">نجران</a>.
     </Fragment>
   </Hero>
 
@@ -369,10 +385,34 @@ const metadata = {
   </CallToAction>
 
   <script
+    is:inline
     type="application/ld+json"
     set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'الرئيسية',
+              item: 'https://topsafetypro.com/',
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'خدمات بلدي والتقارير الهندسية',
+              item: 'https://topsafetypro.com/جميع-الخدمات/',
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: 'تقرير فني بلدي معتمد',
+              item: 'https://topsafetypro.com/تقرير-فني-بلدي/',
+            },
+          ],
+        },
         {
           '@type': 'ProfessionalService',
           '@id': 'https://topsafetypro.com/تقرير-فني-بلدي/#service',
